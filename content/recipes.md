@@ -1,0 +1,5 @@
+---
+navTitle: 'Recipes'
+---
+
+# Recipes!

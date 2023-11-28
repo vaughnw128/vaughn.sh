@@ -1,1 +1,5 @@
-Hello, index : )
+---
+navTitle: 'Home'
+---
+
+# Index!
