@@ -2,9 +2,9 @@
 Vaughn Woerpel
 (Thanks Chef Mike)
 
-# Ingredients
+## Ingredients
 
-## Rice
+### Rice
 - 1/2 large spanish/yellow onion
 - 3 cloves garlic
 - olive oil
@@ -17,7 +17,7 @@ Vaughn Woerpel
 - 1 cup arborio rice
 - 1qt chicken stock (low sodium)
 
-## Chicken
+### Chicken
 - 1lb chicken thigh
 - 1tsp paprika
 - 1tsp garlic powder
@@ -25,11 +25,14 @@ Vaughn Woerpel
 - pepper
 - 1tbsp olive oil
 
-## To finish
+### To finish
 - Sour cream
 - Lemon
 
-# Directions
+---
+
+## Directions
+
 1. Mix chicken with dry spices, salt, and olive oil, then place in a 500 degree oven for 10-15 minutes. Check frequently so as not to overcook it.
 2. Remove chicken from oven, let cool for a few minutes, then break into large chunks with a fork
 3. Dice onion and cook over medium high heat with olive oil until translucent

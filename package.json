@@ -26,6 +26,7 @@
     "@nuxt/content": "npm:@nuxt/content-edge@latest",
     "@nuxtjs/tailwindcss": "^6.10.1",
     "@tailwindcss/typography": "^0.5.10",
-    "gh-pages": "^6.1.0"
+    "gh-pages": "^6.1.0",
+    "shikiji": "^0.7.5"
   }
 }

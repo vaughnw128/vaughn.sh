@@ -1,5 +1,5 @@
 <template>
-    <div class="flex justify-between max-w-6xl px-4 py-4 mx-auto sm:px-2">
+    <div class="flex justify-between max-w-4xl px-4 py-4 mx-auto sm:px-2">
       <div>
         <ContentNavigation>
           <NuxtLink href="/" class="rounded-lg px-2 py-1 text-slate-700 font-medium hover:bg-slate-100 hover:text-slate-900">Home</NuxtLink>
