@@ -13,5 +13,9 @@ export default defineNuxtConfig({
     }
   },
   devtools: { enabled: true },
-  css: ['~/assets/css/main.css']
+  css: ['~/assets/css/main.css'],
+  app: {
+    baseURL: '/', // baseURL: '/<repository>/'
+    buildAssetsDir: 'assets', // don't use "_" at the begining of the folder name to avoids nojkill conflict
+  }
 })

@@ -7,9 +7,11 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
+    "@nuxt/content": "npm:@nuxt/content-edge@latest",
     "@nuxt/devtools": "latest",
     "autoprefixer": "^10.4.16",
     "nuxt": "^3.8.2",
@@ -18,14 +20,14 @@
     "shikiji": "^0.7.5",
     "tailwindcss": "^3.3.5",
     "vue": "^3.3.8",
-    "@nuxt/content": "npm:@nuxt/content-edge@latest",
     "vue-router": "^4.2.5"
   },
   "dependencies": {
     "@nuxt-themes/typography": "^1.0.1",
+    "@nuxt/content": "npm:@nuxt/content-edge@latest",
     "@nuxtjs/tailwindcss": "^6.10.1",
     "@tailwindcss/typography": "^0.5.10",
-    "@nuxt/content": "npm:@nuxt/content-edge@latest",
+    "gh-pages": "^6.1.0",
     "shiki": "^0.14.5",
     "shiki-es": "^0.14.0"
   }
