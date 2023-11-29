@@ -8,14 +8,10 @@ export default defineNuxtConfig({
     documentDriven: true,
     highlight: {
       // Theme used in all color schemes.
-      theme: 'github-light',
-      preload: ['diff', 'ts', 'js', 'css', 'java', 'groovy', 'sql', 'xml', 'json', 'python'],
+      theme: 'monokai',
+      preload: ['python'],
     }
   },
   devtools: { enabled: true },
-  css: ['~/assets/css/main.css'],
-  app: {
-    baseURL: '/', // baseURL: '/<repository>/'
-    buildAssetsDir: 'assets', // don't use "_" at the begining of the folder name to avoids nojkill conflict
-  }
+  css: ['~/assets/css/main.css']
 })
