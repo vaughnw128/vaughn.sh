@@ -1,3 +1,9 @@
+---
+navTitle: 'Arroz con Pollo'
+head.description: 'Spanish Chicken and Rice'
+category: 'recipes'
+---
+
 # Arroz con Pollo - Mas Tapas
 Vaughn Woerpel
 (Thanks Chef Mike)
