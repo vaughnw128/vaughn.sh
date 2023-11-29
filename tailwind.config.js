@@ -9,7 +9,11 @@ module.exports = {
     "./error.vue",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['sans']
+      }
+    },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 }
