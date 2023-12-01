@@ -4,6 +4,14 @@ const navPaths = ['recipes', 'projects', 'security']
 </script>
 
 <template>
+  <div class="flex justify-center space-x-0">
+    <div class="flex items-center justify-center w-[10%] font-adelia text-xl">
+      VAUGHN'S ZONE
+    </div>
+      <Navbar class="w-[40%]" />
+    <div class="w-[10%]" />
+  </div>
+
   <div class="flex justify-center space-x-4">
     <div v-if="navPaths.includes(currentCategory)" class="sticky top-5 h-full w-[10%] px-2 py-4 bg-white sm:px-4 sm:shadow dark:bg-gray-800 ring-1 ring-gray-200 dark:ring-gray-700 sm:rounded-lg">
       <LeftNav />

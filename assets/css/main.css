@@ -6,3 +6,8 @@
   font-family: "sans";
   src: url("sans.ttf");
 }
+
+@font-face {
+  font-family: "adelia";
+  src: url("ADELIA2.otf");
+}

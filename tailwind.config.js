@@ -11,7 +11,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['sans']
+        sans: ['sans'],
+        adelia: ['adelia']
       }
     },
   },
