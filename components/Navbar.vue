@@ -2,11 +2,11 @@
     <div class="flex justify-between px-4 py-4 mx-auto sm:px-2">
       <div>
         <ContentNavigation>
-          <NuxtLink href="/" class="rounded-lg px-2 py-1 text-slate-700 font-medium hover:bg-slate-100 hover:text-slate-900">Home</NuxtLink>
-          <NuxtLink href="/about" class="rounded-lg px-2 py-1 text-slate-700 font-medium hover:bg-slate-100 hover:text-slate-900">About</NuxtLink>
-          <NuxtLink href="/projects" class="rounded-lg px-2 py-1 text-slate-700 font-medium hover:bg-slate-100 hover:text-slate-900">Projects</NuxtLink>
-          <NuxtLink href="/recipes" class="rounded-lg px-2 py-1 text-slate-700 font-medium hover:bg-slate-100 hover:text-slate-900">Recipes</NuxtLink>
-          <NuxtLink href="/security" class="rounded-lg px-2 py-1 text-slate-700 font-medium hover:bg-slate-100 hover:text-slate-900">Security</NuxtLink>
+          <NuxtLink href="/" class="rounded-lg px-2 py-1 font-medium hover:bg-slate-100 hover:text-slate-900">Home</NuxtLink>
+          <NuxtLink href="/about" class="rounded-lg px-2 py-1 font-medium hover:bg-slate-100 hover:text-slate-900">About</NuxtLink>
+          <NuxtLink href="/projects" class="rounded-lg px-2 py-1 font-medium hover:bg-slate-100 hover:text-slate-900">Projects</NuxtLink>
+          <NuxtLink href="/recipes" class="rounded-lg px-2 py-1 font-medium hover:bg-slate-100 hover:text-slate-900">Recipes</NuxtLink>
+          <NuxtLink href="/security" class="rounded-lg px-2 py-1 font-medium hover:bg-slate-100 hover:text-slate-900">Security</NuxtLink>
         </ContentNavigation>
       </div>
 

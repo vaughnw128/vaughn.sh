@@ -5,15 +5,18 @@ const navPaths = ['recipes', 'projects', 'security']
 
 <template>
   <div class="flex justify-center space-x-0">
-    <div class="flex items-center justify-center w-[10%] font-adelia text-xl">
+    <div class="
+            bg-gradient-to-r bg-clip-text  text-transparent 
+            from-indigo-500 via-purple-500 to-red-500
+            animate-text flex items-center justify-center w-[15%] font-adelia text-xl">
       VAUGHN'S ZONE
     </div>
       <Navbar class="w-[40%]" />
-    <div class="w-[10%]" />
+    <div class="w-[15%]" />
   </div>
 
   <div class="flex justify-center space-x-4">
-    <div v-if="navPaths.includes(currentCategory)" class="sticky top-5 h-full w-[10%] px-2 py-4 bg-white sm:px-4 sm:shadow dark:bg-gray-800 ring-1 ring-gray-200 dark:ring-gray-700 sm:rounded-lg">
+    <div v-if="navPaths.includes(currentCategory)" class="sticky top-5 h-full w-[12%] px-2 py-4 bg-white sm:px-4 sm:shadow dark:bg-gray-800 ring-1 ring-gray-200 dark:ring-gray-700 sm:rounded-lg">
       <LeftNav />
     </div>
 
@@ -26,6 +29,6 @@ const navPaths = ['recipes', 'projects', 'security']
           </slot>
         </main>
     </div>
-    <div v-if="navPaths.includes(currentCategory)" class="w-[10%]" />
+    <div v-if="navPaths.includes(currentCategory)" class="w-[12%]" />
   </div>
 </template>
