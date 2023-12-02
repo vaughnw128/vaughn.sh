@@ -1,10 +1,11 @@
 FROM node:18
 EXPOSE 3000
 
+WORKDIR /usr/app
+COPY ./ /usr/app
+
 RUN npm install
 RUN npm run build
 
-COPY . .
-
-ENTRYPOINT ["node"]
-CMD [".output/server/index.mjs"]
+ENTRYPOINT ["npx"]
+CMD ["serve"]
