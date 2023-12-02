@@ -23,7 +23,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     defaults:
       run:
-        working-directory: .demo
+        working-directory: .
 
     strategy:
       matrix:
