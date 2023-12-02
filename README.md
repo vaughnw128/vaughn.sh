@@ -1,75 +1,24 @@
-# Nuxt 3 Minimal Starter
+# vaughn.sh
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+My personal website!
 
-## Setup
+Uses Nuxt 3 along with Nuxt Content 2 to generate static pages based on markdown files.
 
-Make sure to install the dependencies:
+Uses:
+- Nuxt 3
+- Nuxt Content 2
+- TailwindCSS
+- Vue
+- Shikiji
+- Nuxt Icon
 
-```bash
-# npm
-npm install
+The site is statically built via Github Actions, then deployed via Github Pages.
 
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
+# Local Development
 
 ```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
+$ npm install
+$ npm run dev
 ```
 
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Then access the site at http://localhost:3000
