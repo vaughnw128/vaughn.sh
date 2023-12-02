@@ -2,7 +2,7 @@
 title: 'Space Heroes 2023'
 ---
 
-![](images/dontpanic.gif)
+![](/assets/images/dontpanic.gif)
 # Space Heroes CTF 2023
 
 **Team:** Team Contagion

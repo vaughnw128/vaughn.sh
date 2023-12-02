@@ -22,21 +22,21 @@ Files: `guardians_of_the_galaxy.bin`
 
 This reverse engineering challenge required that you send a properly formatted 'password' to the program in order to get the flag. However, it would seem that the password *is* the flag.
 
-![](images/groot_password_prompt.png)
+![](/assets/images/groot_password_prompt.png)
 
 We're first prompted with an enter password screen. This doesn't do us much good so I opened it in Ghidra like any responsible reverse engineer-er.
 
 Inside the main function there is some logic to check whether the password you entered is correct. First it checks if the password is 27 characters long, then checks if certain parts of it are equal to certain strings. These strings look suspicious, though.
 
-![](images/groot_main.png)
+![](/assets/images/groot_main.png)
 
 When observing the code closely, the atox and r functions are performing operations on the 3 substrings of the flag and then checking to see if you've entered it properly. These can be easily reversed by seeing how the functions work.
 
-![](images/r_func.png)
-![](images/atox_func.png)
+![](/assets/images/r_func.png)
+![](/assets/images/atox_func.png)
 
 For the function r, it seems that the characters are having four subtracted from their value. This can be simply reversed by just doing the opposite: adding four. With atox on the other hand, all it's doing is converting the string to hex. If we reverse these and recombine them, we get the flag.
 
-![](images/groot_flag.png)
+![](/assets/images/groot_flag.png)
 
 **Flag:**  `shctf{5ky_1s_n0t_th3_l1m1t}`

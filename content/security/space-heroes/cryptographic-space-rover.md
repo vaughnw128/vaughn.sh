@@ -133,6 +133,6 @@ while True:
 
 This script loops through all ascii characters, and then uses those to progressively guess the flag. It checks to see if the current guess is right by checking the number of uuids printed out. To make it easier, I silenced all output from the actual program and just let it guess.
 
-![](images/brute_force_nasa.png)
+![](/assets/images/brute_force_nasa.png)
 
 **Flag:** `shCTF{MET30RS_4R3NT_aS_b4D_4S_sL0W_cpu}`

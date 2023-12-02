@@ -55,6 +55,6 @@ c = "405c5b4550495e5e02390607217f11695a61587c6351536b741d301d6d182c48254e7f49276
 
 Then with this, we can derive the keys by using chunk A in reverse. We xor A with B, and that gives us key2, and we xor A with C, and that gives us key1. From here, all we have to do is plug it into xor(p,k1,k2) and we get the flag.
 
-![](images/cyberchefxor.png)
+![](/assets/images/cyberchefxor.png)
 
 **Flag**: `shctf{on3_e1GHt_hUnDR3d_D-R-U-I-D-I-A__}`

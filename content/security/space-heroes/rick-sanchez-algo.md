@@ -24,6 +24,6 @@ e = 3412227947038934182478852627564512970725877639428828744897413324202816073614
 
 This one was very simple. No complicated cryptanalysis, just shove it straight into rsactftool, and you get the flag.
 
-![](images/rsactfswag.png)
+![](/assets/images/rsactfswag.png)
 
 **Flag:** `shctf{1_w4n7_thA7_mCnu99E7_5auc3_M0R7Y}`

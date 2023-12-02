@@ -21,7 +21,7 @@ Before looking at the python script, I thought I'd first give `flag.mp3` a liste
 Next up was to check out the script. I went through the script and added comments detailing what it was doing in order to properly understand it. 
 
 
-![](images/commented-code.png)
+![](/assets/images/commented-code.png)
 
 The function of this script is to take a file `flag.txt` and encode it into unicode characters, fetch a song with an ID that matches the unicode character, and then add the first three seconds of it to the `flag.mp3` file.
 

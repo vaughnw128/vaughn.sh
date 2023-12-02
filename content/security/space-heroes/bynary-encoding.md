@@ -20,11 +20,11 @@ Files: `transmission.txt`
 
 When opening the transmission.txt file, all we see is whitespace! My first thought is that this may be the whitespace language, but that was wrong.
 
-![](images/whitespace.png)
+![](/assets/images/whitespace.png)
 
 Next, I decided to read the bytes of the file with python, and I got this:
 
-![](images/whitespace_bytes.png)
+![](/assets/images/whitespace_bytes.png)
 
 We can work with this! We can see that the length of each line is nine, then minus the newline character it's 8. This means that each line is a byte, and can be read as characters. To solve this challenge I wrote a quick script that would find the character for the byte and then print it out.
 

@@ -22,14 +22,14 @@ Files: `Alien_Wordle.png, cipher.txt`
 
 The first thing I did with this challenge was check the Alien_Wordle.png image.
 
-![](images/wordle.png)
+![](/assets/images/wordle.png)
 
 Knowing that this challenge is Futurama themed, I searched for a Futurama alien language cipher. This allowed me to decode this image with the final row of the wordle being: `STAR__S_`. This means that the expected answer for the Wordle is STARDUST. 
 
 With cipher.txt being `trt3_db_mz1gq_fekdf_x1ty`, and the challenge description saying that the aliens liked old ciphers, I decided to throw it into vigenere. Lo and behold, that popped the flag.
 
-![](images/vigenere_finally.png)
+![](/assets/images/vigenere_finally.png)
 
-![](images/bite_my_a$$.png)
+![](/assets/images/bite_my_a$$.png)
 
 **Flag**: `shctf{byt3_my_sh1ny_metal_flag}`
