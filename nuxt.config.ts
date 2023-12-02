@@ -9,7 +9,7 @@ export default defineNuxtConfig({
     highlight: {
       // Theme used in all color schemes.
       theme: 'monokai',
-      preload: ['python'],
+      preload: ['python', 'javascript'],
     }
   },
   devtools: { enabled: true },

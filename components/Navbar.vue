@@ -1,13 +1,11 @@
 <template>
     <div class="max-h-full flex justify-between px-4 py-4 mx-auto sm:px-2 font-adelia">
       <div>
-        <ContentNavigation>
-          <NuxtLink href="/" class="rounded-lg px-2 py-1 font-medium hover:bg-slate-100 hover:text-slate-900">Home</NuxtLink>
-          <NuxtLink href="/about" class="rounded-lg px-2 py-1 font-medium hover:bg-slate-100 hover:text-slate-900">About</NuxtLink>
-          <NuxtLink href="/projects" class="rounded-lg px-2 py-1 font-medium hover:bg-slate-100 hover:text-slate-900">Projects</NuxtLink>
-          <NuxtLink href="/recipes" class="rounded-lg px-2 py-1 font-medium hover:bg-slate-100 hover:text-slate-900">Recipes</NuxtLink>
-          <NuxtLink href="/security" class="rounded-lg px-2 py-1 font-medium hover:bg-slate-100 hover:text-slate-900">Security</NuxtLink>
-        </ContentNavigation>
+          <NuxtLink to="/" exactActiveClass="animated-text-gradient" class="hover:animated-text-gradient rounded-lg px-2 py-1 font-medium">Home</NuxtLink>
+          <NuxtLink to="/about" exactActiveClass="animated-text-gradient" class="hover:animated-text-gradient rounded-lg px-2 py-1 font-medium">About</NuxtLink>
+          <NuxtLink to="/projects" exactActiveClass="animated-text-gradient" class="hover:animated-text-gradient rounded-lg px-2 py-1 font-medium">Projects</NuxtLink>
+          <NuxtLink to="/recipes" exactActiveClass="animated-text-gradient" class="hover:animated-text-gradient rounded-lg px-2 py-1 font-medium">Recipes</NuxtLink>
+          <NuxtLink to="/security" exactActiveClass="animated-text-gradient" class="hover:animated-text-gradient rounded-lg px-2 py-1 font-medium">Security</NuxtLink>
       </div>
 
       <div class="flex space-x-3 transition text-gray-500">

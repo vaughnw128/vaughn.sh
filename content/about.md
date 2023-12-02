@@ -1,6 +1,6 @@
 ---
 head.title: 'About'
-navigation.title: 'About'
+navTitle: 'About'
 ---
 
 # About
