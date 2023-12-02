@@ -4,7 +4,8 @@ export default defineNuxtConfig({
     'nuxt-content-assets',
     '@nuxt/content', 
     'nuxt-icon',
-    '@nuxtjs/tailwindcss',],
+    '@nuxtjs/tailwindcss',
+  ],
   content: {
     documentDriven: true,
     highlight: {
@@ -14,5 +15,11 @@ export default defineNuxtConfig({
     }
   },
   devtools: { enabled: true },
-  css: ['~/assets/css/main.css']
+  css: ['~/assets/css/main.css'],
+  hooks: {
+    close: (nuxt) => {
+      if (!nuxt.options._prepare)
+        process.exit()
+    }
+  }
 })
