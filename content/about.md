@@ -1,4 +1,5 @@
 ---
+head.title: 'About'
 navigation.title: 'About'
 ---
 

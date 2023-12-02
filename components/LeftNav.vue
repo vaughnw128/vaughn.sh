@@ -14,8 +14,9 @@ const folderContent = await queryContent(currentCategory).find()
                         :key="content._path"
                         :to="content._path"
                         active-class="font-bold"
+                        
                         >
-                        <li>{{ content.navTitle || content.title }}</li>
+                        <li class="hover:translate-x-2">{{ content.navTitle || content.title }}</li>
                     </NuxtLink>
                 </ul>
             </ContentNavigation>

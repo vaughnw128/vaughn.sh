@@ -1,9 +1,8 @@
 ---
 navTitle: 'Arroz con Pollo'
-head.description: 'Spanish Chicken and Rice'
 ---
 
-# Arroz con Pollo - Mas Tapas
+# Arroz con Pollo
 
 ⏲️ Active time: 30 mins
 

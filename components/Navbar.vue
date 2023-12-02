@@ -1,5 +1,5 @@
 <template>
-    <div class="flex justify-between px-4 py-4 mx-auto sm:px-2">
+    <div class="max-h-full flex justify-between px-4 py-4 mx-auto sm:px-2 font-adelia">
       <div>
         <ContentNavigation>
           <NuxtLink href="/" class="rounded-lg px-2 py-1 font-medium hover:bg-slate-100 hover:text-slate-900">Home</NuxtLink>
