@@ -1,11 +1,15 @@
+<script setup>
+const getSlug =  useRoute().params["slug"][0]
+</script>
+
 <template>
     <div class="max-h-full flex justify-between px-4 py-4 mx-auto sm:px-2 font-adelia">
       <div>
-          <NuxtLink to="/" exactActiveClass="animated-text-gradient" class="hover:animated-text-gradient rounded-lg px-2 py-1 font-medium">Home</NuxtLink>
+          <NuxtLink to="/"  class="hover:animated-text-gradient rounded-lg px-2 py-1 font-medium">Home</NuxtLink>
           <NuxtLink to="/about" exactActiveClass="animated-text-gradient" class="hover:animated-text-gradient rounded-lg px-2 py-1 font-medium">About</NuxtLink>
-          <NuxtLink to="/projects" exactActiveClass="animated-text-gradient" class="hover:animated-text-gradient rounded-lg px-2 py-1 font-medium">Projects</NuxtLink>
-          <NuxtLink to="/recipes" exactActiveClass="animated-text-gradient" class="hover:animated-text-gradient rounded-lg px-2 py-1 font-medium">Recipes</NuxtLink>
-          <NuxtLink to="/security" exactActiveClass="animated-text-gradient" class="hover:animated-text-gradient rounded-lg px-2 py-1 font-medium">Security</NuxtLink>
+          <NuxtLink to="/projects" :class="{'animated-text-gradient': getSlug=='projects'}" class="hover:animated-text-gradient rounded-lg px-2 py-1 font-medium">Projects</NuxtLink>
+          <NuxtLink to="/recipes" :class="{'animated-text-gradient': getSlug=='recipes'}" class="hover:animated-text-gradient rounded-lg px-2 py-1 font-medium">Recipes</NuxtLink>
+          <NuxtLink to="/security" :class="{'animated-text-gradient': getSlug=='security'}" class="hover:animated-text-gradient rounded-lg px-2 py-1 font-medium">Security</NuxtLink>
       </div>
 
       <div class="flex space-x-3 transition text-gray-500">

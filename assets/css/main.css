@@ -4,16 +4,29 @@
 
 @font-face {
   font-family: "sans";
-  src: url("sans.ttf");
+  src: url("fonts/sans.ttf");
 }
 
 @font-face {
   font-family: "adelia";
-  src: url("ADELIA2.otf");
+  src: url("fonts/ADELIA.otf");
 }
 
 @layer components{
   .animated-text-gradient {
-    @apply bg-gradient-to-r bg-clip-text  text-transparent from-indigo-500 via-purple-500 to-red-500 animate-text;
+    @apply bg-gradient-to-r bg-clip-text text-transparent from-indigo-500 via-purple-500 to-red-500 animate-text;
   }
+}
+
+body {
+  @apply prose-code:before:hidden prose-code:after:hidden text-white pattern-zigzag pattern-bg-transparent pattern-slate-900 pattern-bg-slate-950 pattern-size-2 pattern-opacity-100 bg-fixed;
+}
+
+pre, code {
+  @apply font-mono;
+}
+
+code {
+  @apply text-white border border-b-2 bg-gray-400/30 border-neutral-600/50;
+  @apply rounded px-1.5 pt-[3px] pb-0.5 mx-px;
 }

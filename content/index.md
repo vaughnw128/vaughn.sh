@@ -1,6 +1,5 @@
 ---
-head.title: 'Home'
-navTitle: 'Home'
+title: 'Home'
 ---
 
-asdasdasd
+# Home

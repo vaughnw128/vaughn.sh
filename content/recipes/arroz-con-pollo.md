@@ -1,5 +1,5 @@
 ---
-navTitle: 'Arroz con Pollo'
+title: 'Arroz con Pollo'
 ---
 
 # Arroz con Pollo

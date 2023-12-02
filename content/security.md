@@ -1,6 +1,5 @@
 ---
-head.title: 'Security'
-navTitle: 'Security'
+title: 'Security'
 ---
 
 # Security!

@@ -1,6 +1,5 @@
 ---
-head.title: 'Recipes'
-navTitle: 'Recipes'
+title: 'Recipes'
 ---
 
 # Recipes!

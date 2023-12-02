@@ -1,6 +1,5 @@
 ---
-navTitle: 'Cumin Pork'
-head.description: 'Dry Braised Cumin Pork'
+title: 'Cumin Pork'
 ---
 
 # Dry Braised Cumin Pork

@@ -6,12 +6,14 @@ const navPaths = ['recipes', 'projects', 'security']
 <template>
   <div class="flex justify-center space-x-2">
     <div class="space-y-2 w-[15%] sticky top-1 h-full px-4 py-4 sm:px-2">
-      <div class="text-center align-text-bottom animated-text-gradient
-             flex justify-center font-adelia text-3xl p-2">
+      <div class="text-right align-text-bottom animated-text-gradient
+             font-adelia text-3xl p-2">
       VAUGHN'S ZONE
       </div>
-      <div v-if="navPaths.includes(currentCategory)" class="bg-gray px-4 py-4 bg-slate-800 ring-1 ring-gray-700 rounded-lg">
-        <LeftNav />
+      <div class="flex flex-row-reverse">
+        <div v-if="navPaths.includes(currentCategory)" class="w-[60%] bg-gray px-4 py-4 bg-slate-800 ring-1 ring-gray-700 rounded-lg">
+          <Sidenav />
+        </div>
       </div>
     </div>
     
@@ -31,9 +33,3 @@ const navPaths = ['recipes', 'projects', 'security']
     <div class="w-[15%]" />
   </div>
 </template>
-
-<style lang="postcss">
-body {
-  @apply text-white pattern-zigzag pattern-bg-transparent pattern-slate-900 pattern-bg-slate-950 pattern-size-2 pattern-opacity-100 bg-fixed;
-}
-</style>

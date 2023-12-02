@@ -1,6 +1,5 @@
 ---
-head.title: 'Projects'
-navTitle: 'Projects'
+title: 'Projects'
 ---
 
 # Projects!

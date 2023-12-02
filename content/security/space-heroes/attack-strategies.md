@@ -1,9 +1,8 @@
 ---
-head.title: 'Attack Strategies'
-navTitle: 'Attack Strategies'
+title: 'Attack Strategies'
 ---
 
-# Attack-strategies
+# Attack Strategies
 **Category:** Web
 
 **Points:** ???
@@ -19,7 +18,7 @@ navTitle: 'Attack Strategies'
 
 When we go to the site, we're prompted with a selection screen where we can chose a folder and select a file within that folder. If we check out the Javascript for the challenge we can see how it works.
 
-![[attack_strategies.png]]
+![](images/attack_strategies.png)
 
 ```javascript
 document.getElementById('folder_select').addEventListener('change', function() {
@@ -51,18 +50,18 @@ document.getElementById('folder_select').addEventListener('change', function() {
 
 This script selects files/folders from the current folder that it's in, and then displays them to the 'Select a folder' selector. Suspiciously, if we check our cookies we can see a "show_hidden" cookie. Setting this to true shows us a `flag.txt` under folders.
 
-![[secret_cookies.png]]
+![](images/secret_cookies.png)
 
-![[hidden_options.png]]
+![](images/hidden_options.png)
 
 Of course it forbids us from selecting it, though. I had an idea, however. What happens if I put a `../` in the request? What if I requested `folder_select=Protoss&file_select=../Terrans/Double+Proxy+Rax`?
 
 Well, doing that shows us that our suspicion is correct.
 
-![[proxyrax.png]]
+![](images/proxyrax.png)
 
 From here, all I needed to do was request the flag.
 
-![[zergrush.png]]
+![](images/zergrush.png)
 
 **Flag**: `shctf{get_zerg_rushed_nb}`
