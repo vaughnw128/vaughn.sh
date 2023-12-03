@@ -6,10 +6,10 @@ const navPaths = ['recipes', 'projects', 'security']
 <template>
   <div class="grid grid-cols-3 justify-center gap-4">
     <div class="items-center ms-auto flex flex-col space-y-2">  
-        <div class="py-sm animated-text-gradient font-adelia text-3xl py-2">
-          VAUGHN'S ZONE
+          <div class="py-sm animated-text-gradient font-adelia text-3xl py-2">
+            VAUGHN'S ZONE
           </div>
-          <div v-if="navPaths.includes(currentCategory)" class="ms-auto bg-gray px-4 py-4 bg-slate-800 ring-1 ring-gray-700 rounded-lg">
+          <div v-if="navPaths.includes(currentCategory)" class="ms-auto bg-gray px-4 py-4 bg-slate-800 ring-1 ring-gray-700 rounded-lg sticky top-4">
             <LeftNav />
           </div>
     </div>
@@ -17,7 +17,7 @@ const navPaths = ['recipes', 'projects', 'security']
     <div>
       <Navbar />
       <div class="bg-slate-800 px-8 py-10 m-auto ring-1 ring-gray-700 rounded-lg">
-        <main class="prose prose-invert prose-pre:bg-gray-900 hover:prose-a:text-primary-400 prose-a:font-normal prose-a:decoration-dotted hover:prose-a:decoration-wavy hover:prose-a:border-primary-400">
+        <main class="max-w-none prose prose-invert prose-pre:bg-gray-900 hover:prose-a:text-primary-400 prose-a:font-normal prose-a:decoration-dotted hover:prose-a:decoration-wavy hover:prose-a:border-primary-400">
           <slot>
               <h1 class="text-2xl">
                 Page not found
