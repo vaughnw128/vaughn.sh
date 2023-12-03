@@ -3,15 +3,15 @@ const currentCategory = useRoute().params["slug"][0]
 const navPaths = ['recipes', 'projects', 'security']
 </script>
 
-<!-- <template>
-  <div class="h-screen flex justify-center">
-    <div class="items-center ms-auto flex flex-col space-y-2 sticky top-1 h-full">  
-      <div class="py-sm animated-text-gradient font-adelia text-3xl py-2">
-        VAUGHN'S ZONE
-        </div>
-        <div v-if="navPaths.includes(currentCategory)" class="ms-auto bg-gray px-4 py-4 bg-slate-800 ring-1 ring-gray-700 rounded-lg">
-          <LeftNav />
-        </div>
+<template>
+  <div class="grid grid-cols-3 justify-center gap-4">
+    <div class="items-center ms-auto flex flex-col space-y-2">  
+        <div class="py-sm animated-text-gradient font-adelia text-3xl py-2">
+          VAUGHN'S ZONE
+          </div>
+          <div v-if="navPaths.includes(currentCategory)" class="ms-auto bg-gray px-4 py-4 bg-slate-800 ring-1 ring-gray-700 rounded-lg">
+            <LeftNav />
+          </div>
     </div>
 
     <div>
@@ -28,12 +28,12 @@ const navPaths = ['recipes', 'projects', 'security']
     </div>
 
   </div>
-</template> -->
+</template>
 
-<template>
+<!-- <template>
   <div class="grid grid-cols-3 justify-center gap-4">
     <div class="items-center ms-auto flex flex-col space-y-2 sticky top-1">  
-      <div class="sticky top-2">
+      <div class="justify-center sticky top-2">
         <div class="py-sm animated-text-gradient font-adelia text-3xl py-2">
           VAUGHN'S ZONE
           </div>
@@ -57,7 +57,7 @@ const navPaths = ['recipes', 'projects', 'security']
     </div>
 
   </div>
-</template>
+</template> -->
 
 <!-- <template>
   <div class=" flex justify-center space-x-2">
