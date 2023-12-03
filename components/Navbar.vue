@@ -3,9 +3,9 @@ const getSlug =  useRoute().params["slug"][0]
 </script>
 
 <template>
-    <div class="max-h-full flex justify-between px-4 py-4 mx-auto sm:px-2 font-adelia">
+    <div class="flex justify-between px-4 py-4 font-adelia">
       <div>
-          <NuxtLink to="/"  class="hover:animated-text-gradient rounded-lg px-2 py-1 font-medium">Home</NuxtLink>
+          <NuxtLink to="/"  exactActiveClass="animated-text-gradient" class="hover:animated-text-gradient rounded-lg px-2 py-1 font-medium">Home</NuxtLink>
           <NuxtLink to="/about" exactActiveClass="animated-text-gradient" class="hover:animated-text-gradient rounded-lg px-2 py-1 font-medium">About</NuxtLink>
           <NuxtLink to="/projects" :class="{'animated-text-gradient': getSlug=='projects'}" class="hover:animated-text-gradient rounded-lg px-2 py-1 font-medium">Projects</NuxtLink>
           <NuxtLink to="/recipes" :class="{'animated-text-gradient': getSlug=='recipes'}" class="hover:animated-text-gradient rounded-lg px-2 py-1 font-medium">Recipes</NuxtLink>

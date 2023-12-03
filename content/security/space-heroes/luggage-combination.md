@@ -1,5 +1,5 @@
 ---
-ztitle: 'Luggage Combination'
+title: 'Luggage Combination'
 ---
 
 # I've got the same combination on my luggage!
