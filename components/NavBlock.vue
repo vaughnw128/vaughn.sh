@@ -7,17 +7,20 @@ defineProps({
   }
 })
 
-// const treePrint = (title, tree, index, size, depth) => {
-//     if(depth === 0) {
-//      return ' ' + title;
-//     } else if (depth === 1) {
-//       return ` ┃${'━━━'.repeat(depth)} ${title}`;
-//     } else if (index === size){
-//       return ` ┃${'    '.repeat(depth - 1)} ┗ ${tree.name}`;
-//     } else {
-//      return ` ┃${'    '.repeat(depth - 1)} ┣━ ${tree.name}`;
-//     }
-// }
+const getDepth = (item) => {
+  return item._path.split("/").length-2;
+}
+
+const navClass = (item) => {
+    const depth = getDepth(item);
+    if(depth === 0) {
+      return "text-2xl";
+    } else if (depth === 1) {
+      return "text-xl border-b-2 border-dashed";
+    } else {
+     return "";
+    }
+}
 
 const depth = (item) => {
   return item._path.split("/").length-2;
@@ -29,11 +32,10 @@ const depth = (item) => {
     <ul>
       <li v-for="(item, index) in navigationTree" :key="index">
         <NuxtLink :to="item._path">
-            <li class="hover:translate-x-2">{{ item.title }}</li>
-          <!-- {{ treePrint(item.title, item, index, navigationTree.length-1, item._path.split("/").length-2) }} -->
+            <li :class=navClass(item) class="hover:translate-x-2">{{ item.title }}</li>
         </NuxtLink>
         <NavBlock v-if="item.children" :navigation-tree="item.children" />
       </li>
     </ul>
   </div>
-</template>
+</template>)

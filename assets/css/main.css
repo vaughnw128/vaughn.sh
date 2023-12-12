@@ -16,6 +16,10 @@
   .animated-text-gradient {
     @apply bg-gradient-to-r bg-clip-text text-transparent from-indigo-500 via-purple-500 to-red-500 animate-text;
   }
+
+  .animated-text-bounce {
+    @apply bg-gradient-to-r bg-clip-text text-transparent from-indigo-500 via-purple-500 to-red-500 animate-text;
+  }
 }
 
 body {

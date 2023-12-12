@@ -1,5 +1,5 @@
 <script setup>
-const getSlug =  useRoute().params["slug"][0]
+const getSlug = useRoute().params["slug"][0]
 </script>
 
 <template>
