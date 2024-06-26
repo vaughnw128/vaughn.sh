@@ -2,7 +2,7 @@
 
 My personal site for my interests :3
 
-Site theme is `no-style-please` by by [atgumx](https://github.com/atgumx/no-style-please).
+Site theme is a modified `no-style-please` by by [atgumx](https://github.com/atgumx/no-style-please).
 
 ## Development
 

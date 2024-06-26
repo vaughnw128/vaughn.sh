@@ -1,5 +1,7 @@
 base_url = "https://vaughn.sh"
-theme = "no-style-please"
+# theme = "no-style-please"
+
+compile_sass=true
 
 [markdown]
 highlight_code = true
