@@ -1,8 +1,8 @@
 +++
-title = "Vaughn's Site"
+title = "Vaughn's Zone"
 +++
 
-# Vaughn's Site
+{{ bounce_text(text="Vaughn's") }} {{ bounce_text(text="Zone") }}
 
 Hello and welcome to my site. I've put this together to house some write-ups of my various interests. I hope you enjoy!
 
