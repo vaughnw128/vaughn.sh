@@ -1,0 +1,15 @@
+base_url = "https://vaughn.sh"
+theme = "no-style-please"
+
+[markdown]
+highlight_code = true
+
+[extra]
+add_toc = true
+header_nav = [
+    { name = "@home", url = "/" },
+    { name = "#recipes", url = "/recipes" },
+    { name = "+security", url = "/security" },
+    { name = "$hobbies", url = "/hobbies"},
+    { name = "~github", url = "https://github.com/vaughnw128"}
+]
