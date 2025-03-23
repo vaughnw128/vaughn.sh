@@ -14,4 +14,5 @@ header_nav = [
     { name = "+security", url = "/security" },
     { name = "$hobbies", url = "/hobbies"},
     { name = "~github", url = "https://github.com/vaughnw128"}
+    { name = "!friends", url = "https://sbcord.com"}
 ]
