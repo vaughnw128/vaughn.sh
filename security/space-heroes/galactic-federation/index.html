@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+        <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+        <meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+        
+        
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+
+        <title>Galactic Federation</title>
+        
+        <meta name="title" content="Galactic Federation">
+        
+        
+        <meta name="generator" content="Zola v0.16.1">
+
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://vaughn.sh/security/space-heroes/galactic-federation/">
+        <meta property="og:site_name" content="">
+        <meta property="og:title" content="Galactic Federation">
+        
+        
+
+        
+        
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:url" content="https://vaughn.sh/security/space-heroes/galactic-federation/">
+        <meta property="twitter:title" content="Galactic Federation">
+        
+        
+        
+        
+        <link rel="canonical" href="https://vaughn.sh/security/space-heroes/galactic-federation/">
+        
+        <script type="application/ld+json">
+            {
+                
+                "url":"https://vaughn.sh/security/space-heroes/galactic-federation/",
+                "@type":"WebSite",
+                "headline":"Galactic Federation",
+                "name":"Galactic Federation",
+                
+                "@context":"https://schema.org"
+            }
+        </script>
+        
+        
+        
+        <link rel="stylesheet" href="https://vaughn.sh/style.css"/>
+        
+    </head>
+    <body theme="auto">
+        <div class="w">
+            <header>
+                
+                <nav>
+                    
+                    <a href="/" >@home</a>
+                    
+                    <a href="/recipes" >#recipes</a>
+                    
+                    <a href="/security" >+security</a>
+                    
+                    <a href="/hobbies" >$hobbies</a>
+                    
+                    <a href="https://github.com/vaughnw128" >~github</a>
+                    
+                    <a href="https://sbcord.com" >!friends</a>
+                    
+                </nav>
+                
+                
+<p><a href="..">..</a>/galactic-federation</p>
+<p class="post-meta"><time datetime=""></time></p>
+<h1>Galactic Federation</h1>
+
+            </header>
+            <main class="page-content" aria-label="Content">
+                
+
+
+
+<p><strong>Category:</strong> Reverse Engineering
+<strong>Points:</strong> ???
+<strong>Solved By:</strong> Apicius</p>
+<h2 id="challenge">Challenge</h2>
+<blockquote>
+<p>After escaping galactic federal prison, you (the legendary Rick Sanchez) have just given yourself Level 9 access to the federation headquarters. Now, you must break into their computer systems and find a way to topple the galactic government.</p>
+<p><em>Author: monkey_noises</em></p>
+</blockquote>
+<p>Files: <code>galactic_federation.bin</code></p>
+<h2 id="solution">Solution</h2>
+<p>When this program is opened we first get a login page. Guess I need to check if passwords are coded into the binary...</p>
+<p><img src="https://vaughn.sh/security/space-heroes/galactic-federation/fed_login.png" alt="" /></p>
+<p>Opening it in Ghidra, we can see the username and password hardcoded in the binary as strings, with a simple obfuscate function running on it in order to make it slightly more annoying to steal.</p>
+<p><img src="https://vaughn.sh/security/space-heroes/galactic-federation/password_checker.png" alt="" /></p>
+<pre data-lang="c" style="background-color:#2b303b;color:#c0c5ce;" class="language-c "><code class="language-c" data-lang="c"><span style="color:#b48ead;">#include </span><span>&lt;</span><span style="color:#a3be8c;">stdio.h</span><span>&gt;
+</span><span style="color:#b48ead;">#include </span><span>&lt;</span><span style="color:#a3be8c;">string.h</span><span>&gt;
+</span><span style="color:#b48ead;">int </span><span style="color:#8fa1b3;">main</span><span>() {
+</span><span>	</span><span style="color:#b48ead;">char</span><span> password[] = &quot;</span><span style="color:#a3be8c;">hktpu</span><span>&quot;; 
+</span><span>	</span><span style="color:#b48ead;">for </span><span>(</span><span style="color:#b48ead;">int</span><span> i = </span><span style="color:#d08770;">0</span><span>; i &lt; </span><span style="color:#96b5b4;">strlen</span><span>(password); i++) {
+</span><span>		</span><span style="color:#b48ead;">char</span><span> out = password[i]-&#39;</span><span style="color:#96b5b4;">\a</span><span>&#39;;
+</span><span>		</span><span style="color:#96b5b4;">printf</span><span>(&quot;</span><span style="color:#d08770;">%c</span><span>&quot;, out);
+</span><span>	}
+</span><span>}
+</span></code></pre>
+<p>I rewrote the inverse of the simple obfuscate in C, and got the username and password from it:</p>
+<p><code>username: admin</code>
+<code>password: 1_l0v3_wR4ngL3r_jE4nS</code></p>
+<p>With this username and password we can start our search for the flag. Theres a fairly suspicious function called collapse_economy(), and that seems to be what we want to get. The function where collapse_economy() is called checks for two conditions: that the value of the currency is 0, and that the currency is called &quot;usd.&quot;</p>
+<p><img src="https://vaughn.sh/security/space-heroes/galactic-federation/collapse_economy.png" alt="" /></p>
+<p>The line <code>currency = currency + (local_60/100) * currency</code> can be easily taken advantage of by just passing -100 in as our variable so that it sets the currency to be currency + -currency. Then, in another portion of the admin console we can simply change the currency type to USD. We're then given the flag after we collapse the economy.</p>
+<p><img src="https://vaughn.sh/security/space-heroes/galactic-federation/galactic_fed_console.png" alt="" /></p>
+<p><strong>Flag</strong>: <code>shctf{w4it_uH_wh0s_P4y1Ng_m3_2_y3L1_@_tH15_gUy?}</code></p>
+
+
+            </main>
+            <footer>
+                
+<p class="taxonomies">
+
+</p>
+
+                
+            </footer>
+        </div>
+    </body>
+</html>
+        

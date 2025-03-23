@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+        <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+        <meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+        
+        
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+
+        <title>World of Tomorrow</title>
+        
+        <meta name="title" content="World of Tomorrow">
+        
+        
+        <meta name="generator" content="Zola v0.16.1">
+
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://vaughn.sh/security/space-heroes/world-of-tomorrow/">
+        <meta property="og:site_name" content="">
+        <meta property="og:title" content="World of Tomorrow">
+        
+        
+
+        
+        
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:url" content="https://vaughn.sh/security/space-heroes/world-of-tomorrow/">
+        <meta property="twitter:title" content="World of Tomorrow">
+        
+        
+        
+        
+        <link rel="canonical" href="https://vaughn.sh/security/space-heroes/world-of-tomorrow/">
+        
+        <script type="application/ld+json">
+            {
+                
+                "url":"https://vaughn.sh/security/space-heroes/world-of-tomorrow/",
+                "@type":"WebSite",
+                "headline":"World of Tomorrow",
+                "name":"World of Tomorrow",
+                
+                "@context":"https://schema.org"
+            }
+        </script>
+        
+        
+        
+        <link rel="stylesheet" href="https://vaughn.sh/style.css"/>
+        
+    </head>
+    <body theme="auto">
+        <div class="w">
+            <header>
+                
+                <nav>
+                    
+                    <a href="/" >@home</a>
+                    
+                    <a href="/recipes" >#recipes</a>
+                    
+                    <a href="/security" >+security</a>
+                    
+                    <a href="/hobbies" >$hobbies</a>
+                    
+                    <a href="https://github.com/vaughnw128" >~github</a>
+                    
+                    <a href="https://sbcord.com" >!friends</a>
+                    
+                </nav>
+                
+                
+<p><a href="..">..</a>/world-of-tomorrow</p>
+<p class="post-meta"><time datetime=""></time></p>
+<h1>World of Tomorrow</h1>
+
+            </header>
+            <main class="page-content" aria-label="Content">
+                
+
+
+
+<p><strong>Category:</strong> Crypto
+<strong>Points:</strong> ???
+<strong>Solved By:</strong> Apicius</p>
+<h2 id="challenge">Challenge</h2>
+<blockquote>
+<p>Good news everyone! We have been tasked with deciphering a secret message from a less than friendly group of aliens! We know that they use the results of the popular &quot;<em>Alien Wordle</em>&quot; game as a key for their daily encryption method, that they love old human ciphers, and we got a copy of their game in progress. The bad news is, none of us can read alienese. Can you figure out the message?</p>
+<p>Submit the result like this: shctf{decrypted_text_here}</p>
+<p>*Author: Cody</p>
+</blockquote>
+<p>Files: <code>Alien_Wordle.png, cipher.txt</code></p>
+<h2 id="solution">Solution</h2>
+<p>The first thing I did with this challenge was check the Alien_Wordle.png image.</p>
+<p><img src="https://vaughn.sh/security/space-heroes/world-of-tomorrow/wordle.png" alt="" /></p>
+<p>Knowing that this challenge is Futurama themed, I searched for a Futurama alien language cipher. This allowed me to decode this image with the final row of the wordle being: <code>STAR__S_</code>. This means that the expected answer for the Wordle is STARDUST. </p>
+<p>With cipher.txt being <code>trt3_db_mz1gq_fekdf_x1ty</code>, and the challenge description saying that the aliens liked old ciphers, I decided to throw it into vigenere. Lo and behold, that popped the flag.</p>
+<p><img src="https://vaughn.sh/security/space-heroes/world-of-tomorrow/vigenere_finally.png" alt="" /></p>
+<p><img src="https://vaughn.sh/security/space-heroes/world-of-tomorrow/bite_my_a$$.png" alt="" /></p>
+<p><strong>Flag</strong>: <code>shctf{byt3_my_sh1ny_metal_flag}</code></p>
+
+
+            </main>
+            <footer>
+                
+<p class="taxonomies">
+
+</p>
+
+                
+            </footer>
+        </div>
+    </body>
+</html>
+        

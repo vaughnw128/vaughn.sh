@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+        <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+        <meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+        
+        
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+
+        <title>Bynary Encoding</title>
+        
+        <meta name="title" content="Bynary Encoding">
+        
+        
+        <meta name="generator" content="Zola v0.16.1">
+
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://vaughn.sh/security/space-heroes/bynary-encoding/">
+        <meta property="og:site_name" content="">
+        <meta property="og:title" content="Bynary Encoding">
+        
+        
+
+        
+        
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:url" content="https://vaughn.sh/security/space-heroes/bynary-encoding/">
+        <meta property="twitter:title" content="Bynary Encoding">
+        
+        
+        
+        
+        <link rel="canonical" href="https://vaughn.sh/security/space-heroes/bynary-encoding/">
+        
+        <script type="application/ld+json">
+            {
+                
+                "url":"https://vaughn.sh/security/space-heroes/bynary-encoding/",
+                "@type":"WebSite",
+                "headline":"Bynary Encoding",
+                "name":"Bynary Encoding",
+                
+                "@context":"https://schema.org"
+            }
+        </script>
+        
+        
+        
+        <link rel="stylesheet" href="https://vaughn.sh/style.css"/>
+        
+    </head>
+    <body theme="auto">
+        <div class="w">
+            <header>
+                
+                <nav>
+                    
+                    <a href="/" >@home</a>
+                    
+                    <a href="/recipes" >#recipes</a>
+                    
+                    <a href="/security" >+security</a>
+                    
+                    <a href="/hobbies" >$hobbies</a>
+                    
+                    <a href="https://github.com/vaughnw128" >~github</a>
+                    
+                    <a href="https://sbcord.com" >!friends</a>
+                    
+                </nav>
+                
+                
+<p><a href="..">..</a>/bynary-encoding</p>
+<p class="post-meta"><time datetime=""></time></p>
+<h1>Bynary Encoding</h1>
+
+            </header>
+            <main class="page-content" aria-label="Content">
+                
+
+
+
+<p><strong>Category:</strong> Crypto
+<strong>Points:</strong> ???
+<strong>Solved By:</strong> Apicius</p>
+<h2 id="challenge">Challenge</h2>
+<blockquote>
+<p>Starfleet has received a transmission from <a href="https://memory-alpha.fandom.com/wiki/Bynar">Bynaus</a>. However, the message apears to be blank. Is there some kind of hidden message here?</p>
+<p><em>Author: Curtíco</em></p>
+</blockquote>
+<p>Files: <code>transmission.txt</code></p>
+<h2 id="solution">Solution</h2>
+<p>When opening the transmission.txt file, all we see is whitespace! My first thought is that this may be the whitespace language, but that was wrong.</p>
+<p><img src="https://vaughn.sh/security/space-heroes/bynary-encoding/whitespace.png" alt="" /></p>
+<p>Next, I decided to read the bytes of the file with python, and I got this:</p>
+<p><img src="https://vaughn.sh/security/space-heroes/bynary-encoding/whitespace_bytes.png" alt="" /></p>
+<p>We can work with this! We can see that the length of each line is nine, then minus the newline character it's 8. This means that each line is a byte, and can be read as characters. To solve this challenge I wrote a quick script that would find the character for the byte and then print it out.</p>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span>chars = []
+</span><span style="color:#b48ead;">with </span><span style="color:#96b5b4;">open</span><span>(&quot;</span><span style="color:#a3be8c;">transmission.txt</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">r</span><span>&quot;) </span><span style="color:#b48ead;">as </span><span>f:
+</span><span>	</span><span style="color:#b48ead;">for </span><span>line </span><span style="color:#b48ead;">in </span><span>f.</span><span style="color:#bf616a;">readlines</span><span>():
+</span><span>		binary_str = &quot;&quot;
+</span><span>		</span><span style="color:#b48ead;">for </span><span>i </span><span style="color:#b48ead;">in </span><span>line.</span><span style="color:#bf616a;">encode</span><span>():
+</span><span>			</span><span style="color:#b48ead;">if </span><span>i == </span><span style="color:#d08770;">32</span><span>:
+</span><span>				binary_str+=&quot;</span><span style="color:#a3be8c;">0</span><span>&quot;
+</span><span>			</span><span style="color:#b48ead;">if </span><span>i == </span><span style="color:#d08770;">9</span><span>: 
+</span><span>				binary_str+=&quot;</span><span style="color:#a3be8c;">1</span><span>&quot;
+</span><span>			chars.</span><span style="color:#bf616a;">append</span><span>(binary_str)
+</span><span>			
+</span><span>outstring = &quot;&quot; 
+</span><span style="color:#b48ead;">for </span><span>char </span><span style="color:#b48ead;">in </span><span>chars: 
+</span><span>	outstring+=</span><span style="color:#96b5b4;">chr</span><span>(</span><span style="color:#bf616a;">int</span><span>(char,</span><span style="color:#d08770;">2</span><span>)) 
+</span><span style="color:#96b5b4;">print</span><span>(outstring)
+</span></code></pre>
+<p>When this script is run, it gives the flag.</p>
+<p><strong>Flag:</strong>  <code>shctf{a_bl1nd_m4n_t3aching_an_4ndr0id_h0w_to_pa1nt}</code></p>
+
+
+            </main>
+            <footer>
+                
+<p class="taxonomies">
+
+</p>
+
+                
+            </footer>
+        </div>
+    </body>
+</html>
+        
