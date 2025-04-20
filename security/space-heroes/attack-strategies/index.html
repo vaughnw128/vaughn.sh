@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+        <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+        <meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+        
+        
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+
+        <title>Attack Strategies</title>
+        
+        <meta name="title" content="Attack Strategies">
+        
+        
+        <meta name="generator" content="Zola v0.16.1">
+
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://vaughn.sh/security/space-heroes/attack-strategies/">
+        <meta property="og:site_name" content="">
+        <meta property="og:title" content="Attack Strategies">
+        
+        
+
+        
+        
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:url" content="https://vaughn.sh/security/space-heroes/attack-strategies/">
+        <meta property="twitter:title" content="Attack Strategies">
+        
+        
+        
+        
+        <link rel="canonical" href="https://vaughn.sh/security/space-heroes/attack-strategies/">
+        
+        <script type="application/ld+json">
+            {
+                
+                "url":"https://vaughn.sh/security/space-heroes/attack-strategies/",
+                "@type":"WebSite",
+                "headline":"Attack Strategies",
+                "name":"Attack Strategies",
+                
+                "@context":"https://schema.org"
+            }
+        </script>
+        
+        
+        
+        <link rel="stylesheet" href="https://vaughn.sh/style.css"/>
+        
+    </head>
+    <body theme="auto">
+        <div class="w">
+            <header>
+                
+                <nav>
+                    
+                    <a href="/" >@home</a>
+                    
+                    <a href="/recipes" >#recipes</a>
+                    
+                    <a href="/security" >+security</a>
+                    
+                    <a href="/hobbies" >$hobbies</a>
+                    
+                    <a href="https://github.com/vaughnw128" >~github</a>
+                    
+                    <a href="https://sbcord.com" >!friends</a>
+                    
+                </nav>
+                
+                
+<p><a href="..">..</a>/attack-strategies</p>
+<p class="post-meta"><time datetime=""></time></p>
+<h1>Attack Strategies</h1>
+
+            </header>
+            <main class="page-content" aria-label="Content">
+                
+
+
+
+<p><strong>Category:</strong> Web
+<strong>Points:</strong> ???
+<strong>Solved By:</strong> Apicius</p>
+<h2 id="challenge">Challenge</h2>
+<blockquote>
+<p>The StarCraft III Interplanetary Newbie Championship is almost live and I was assigned to take care of teaching everyone in the Newbie-84 planet how to play. I made a blog so each individual can choose their favorite races and strategies to learn before the tournament. I will secretly participate and to give them a change, I hid my go to strategy somewhere on the website. Wanna try finding it?</p>
+<p><em>Author: Bal</em></p>
+</blockquote>
+<h2 id="solution">Solution</h2>
+<p>When we go to the site, we're prompted with a selection screen where we can chose a folder and select a file within that folder. If we check out the Javascript for the challenge we can see how it works.</p>
+<p><img src="https://vaughn.sh/security/space-heroes/attack-strategies/attack_strategies.png" alt="" /></p>
+<pre data-lang="javascript" style="background-color:#2b303b;color:#c0c5ce;" class="language-javascript "><code class="language-javascript" data-lang="javascript"><span>document.</span><span style="color:#96b5b4;">getElementById</span><span>(&#39;</span><span style="color:#a3be8c;">folder_select</span><span>&#39;).</span><span style="color:#96b5b4;">addEventListener</span><span>(&#39;</span><span style="color:#a3be8c;">change</span><span>&#39;, </span><span style="color:#b48ead;">function</span><span>() {
+</span><span>	</span><span style="color:#b48ead;">var </span><span style="color:#bf616a;">folderSelect </span><span>= document.</span><span style="color:#96b5b4;">getElementById</span><span>(&#39;</span><span style="color:#a3be8c;">folder_select</span><span>&#39;);
+</span><span>	</span><span style="color:#b48ead;">var </span><span style="color:#bf616a;">fileSelect </span><span>= document.</span><span style="color:#96b5b4;">getElementById</span><span>(&#39;</span><span style="color:#a3be8c;">file_select</span><span>&#39;);
+</span><span>	</span><span style="color:#b48ead;">var </span><span style="color:#bf616a;">submitBtn </span><span>= document.</span><span style="color:#96b5b4;">querySelector</span><span>(&#39;</span><span style="color:#a3be8c;">input[type=&quot;submit&quot;]</span><span>&#39;);
+</span><span>	</span><span style="color:#b48ead;">var </span><span style="color:#bf616a;">folder </span><span>= </span><span style="color:#bf616a;">folderSelect</span><span>.value;
+</span><span>	</span><span style="color:#b48ead;">if </span><span>(</span><span style="color:#bf616a;">folder</span><span>) {
+</span><span>		</span><span style="color:#8fa1b3;">fetch</span><span>(&#39;</span><span style="color:#a3be8c;">/files/</span><span>&#39; + </span><span style="color:#bf616a;">folder</span><span>)
+</span><span>			.</span><span style="color:#96b5b4;">then</span><span>(</span><span style="color:#bf616a;">response </span><span style="color:#b48ead;">=&gt; </span><span style="color:#bf616a;">response</span><span>.</span><span style="color:#8fa1b3;">json</span><span>())
+</span><span>			.</span><span style="color:#96b5b4;">then</span><span>(</span><span style="color:#bf616a;">data </span><span style="color:#b48ead;">=&gt; </span><span>{
+</span><span>				</span><span style="color:#bf616a;">fileSelect</span><span>.</span><span style="color:#bf616a;">innerHTML </span><span>= &#39;&#39;;
+</span><span>				</span><span style="color:#b48ead;">for </span><span>(</span><span style="color:#b48ead;">var </span><span style="color:#bf616a;">i </span><span>= </span><span style="color:#d08770;">0</span><span>; </span><span style="color:#bf616a;">i </span><span>&lt; </span><span style="color:#bf616a;">data</span><span>.length; </span><span style="color:#bf616a;">i</span><span>++) {
+</span><span>					</span><span style="color:#b48ead;">var </span><span style="color:#bf616a;">option </span><span>= document.</span><span style="color:#96b5b4;">createElement</span><span>(&#39;</span><span style="color:#a3be8c;">option</span><span>&#39;);
+</span><span>					</span><span style="color:#bf616a;">option</span><span>.value = </span><span style="color:#bf616a;">data</span><span>[</span><span style="color:#bf616a;">i</span><span>];
+</span><span>					</span><span style="color:#bf616a;">option</span><span>.text = </span><span style="color:#bf616a;">data</span><span>[</span><span style="color:#bf616a;">i</span><span>];
+</span><span>					</span><span style="color:#bf616a;">fileSelect</span><span>.</span><span style="color:#96b5b4;">appendChild</span><span>(</span><span style="color:#bf616a;">option</span><span>);
+</span><span>				}
+</span><span>				</span><span style="color:#bf616a;">fileSelect</span><span>.disabled = </span><span style="color:#d08770;">false</span><span>;
+</span><span>				</span><span style="color:#bf616a;">submitBtn</span><span>.disabled = </span><span style="color:#d08770;">false</span><span>;
+</span><span>			});
+</span><span>	} </span><span style="color:#b48ead;">else </span><span>{
+</span><span>		</span><span style="color:#bf616a;">fileSelect</span><span>.</span><span style="color:#bf616a;">innerHTML </span><span>= &#39;</span><span style="color:#a3be8c;">&lt;option value=&quot;&quot; selected&gt;Select a file...&lt;/option&gt;</span><span>&#39;;
+</span><span>		</span><span style="color:#bf616a;">fileSelect</span><span>.disabled = </span><span style="color:#d08770;">true</span><span>;
+</span><span>		</span><span style="color:#bf616a;">submitBtn</span><span>.disabled = </span><span style="color:#d08770;">true</span><span>;
+</span><span>	}
+</span><span>});
+</span></code></pre>
+<p>This script selects files/folders from the current folder that it's in, and then displays them to the 'Select a folder' selector. Suspiciously, if we check our cookies we can see a &quot;show_hidden&quot; cookie. Setting this to true shows us a <code>flag.txt</code> under folders.</p>
+<p><img src="https://vaughn.sh/security/space-heroes/attack-strategies/secret_cookies.png" alt="" /></p>
+<p><img src="https://vaughn.sh/security/space-heroes/attack-strategies/hidden_options.png" alt="" /></p>
+<p>Of course it forbids us from selecting it, though. I had an idea, however. What happens if I put a <code>../</code> in the request? What if I requested <code>folder_select=Protoss&amp;file_select=../Terrans/Double+Proxy+Rax</code>?</p>
+<p>Well, doing that shows us that our suspicion is correct.</p>
+<p><img src="https://vaughn.sh/security/space-heroes/attack-strategies/proxyrax.png" alt="" /></p>
+<p>From here, all I needed to do was request the flag.</p>
+<p><img src="https://vaughn.sh/security/space-heroes/attack-strategies/zergrush.png" alt="" /></p>
+<p><strong>Flag</strong>: <code>shctf{get_zerg_rushed_nb}</code></p>
+
+
+            </main>
+            <footer>
+                
+<p class="taxonomies">
+
+</p>
+
+                
+            </footer>
+        </div>
+    </body>
+</html>
+        
