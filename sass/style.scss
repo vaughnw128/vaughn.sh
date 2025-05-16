@@ -143,3 +143,27 @@ h1.wiggle {
   display: inline-block;
   animation: wiggle 1s;
 }
+
+@keyframes horizontal-shaking {
+  0% { transform: translateX(0) }
+  25% { transform: translateX(5px) }
+  50% { transform: translateX(-5px) }
+  75% { transform: translateX(5px) }
+  100% { transform: translateX(0) }
+ }
+
+span.horizontal-shake {
+   animation: horizontal-shaking 0.35s infinite;
+ }
+
+ @keyframes tilt-n-move-shaking {
+   0% { transform: translate(0, 0) rotate(0deg); }
+   25% { transform: translate(5px, 5px) rotate(5deg); }
+   50% { transform: translate(0, 0) rotate(0deg); }
+   75% { transform: translate(-5px, 5px) rotate(-5deg); }
+   100% { transform: translate(0, 0) rotate(0deg); }
+ }
+
+ span.tilt-n-move-shaking {
+   animation: tilt-n-move-shaking 0.35s infinite;
+ }
