@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+        <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+        <meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+        
+        
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+
+        <title>Luggage Combination</title>
+        
+        <meta name="title" content="Luggage Combination">
+        
+        
+        <meta name="generator" content="Zola v0.16.1">
+
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://vaughn.sh/security/space-heroes/luggage-combination/">
+        <meta property="og:site_name" content="">
+        <meta property="og:title" content="Luggage Combination">
+        
+        
+
+        
+        
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:url" content="https://vaughn.sh/security/space-heroes/luggage-combination/">
+        <meta property="twitter:title" content="Luggage Combination">
+        
+        
+        
+        
+        <link rel="canonical" href="https://vaughn.sh/security/space-heroes/luggage-combination/">
+        
+        <script type="application/ld+json">
+            {
+                
+                "url":"https://vaughn.sh/security/space-heroes/luggage-combination/",
+                "@type":"WebSite",
+                "headline":"Luggage Combination",
+                "name":"Luggage Combination",
+                
+                "@context":"https://schema.org"
+            }
+        </script>
+        
+        
+        
+        <link rel="stylesheet" href="https://vaughn.sh/style.css"/>
+        
+    </head>
+    <body theme="auto">
+        <div class="w">
+            <header>
+                
+                <nav>
+                    
+                    <a href="/" >@home</a>
+                    
+                    <a href="/recipes" >#recipes</a>
+                    
+                    <a href="/security" >+security</a>
+                    
+                    <a href="/hobbies" >$hobbies</a>
+                    
+                    <a href="https://github.com/vaughnw128" >~github</a>
+                    
+                    <a href="https://sbcord.com" >!friends</a>
+                    
+                </nav>
+                
+                
+<p><a href="..">..</a>/luggage-combination</p>
+<p class="post-meta"><time datetime=""></time></p>
+<h1>Luggage Combination</h1>
+
+            </header>
+            <main class="page-content" aria-label="Content">
+                
+
+
+
+<p><strong>Category:</strong> Crypto
+<strong>Points:</strong> ???
+<strong>Solved By:</strong> Apicius</p>
+<h2 id="challenge">Challenge</h2>
+<blockquote>
+<p>During the Battle for Druidia, the Spaceballs were able to obtain the code for the Druidia shield gate: 12345. Fortuantely, the Spaceballs had lost that battle, and Druidia lived to breathe another day. However, these security breaches were concerning and so Druidia decided to up their security. This is where you, Spaceballs' top mathematician, comes into play. We are making yet another ploy for Druidia's fresh air, and we need your help figuring out their password. We have obtained the hash of the new combination as well as the algorithm which generated the hash, which we have supplied to you. Find that combination, the fate of Planet Spaceball rests in your hands!</p>
+<p>NOTE: The &quot;combination&quot; will be in flag format, i.e. shctf{...}</p>
+<p><em>Author: monkey_noises</em></p>
+</blockquote>
+<p>Files: <code>hash.txt, luggage_combination.py</code></p>
+<h2 id="solution">Solution</h2>
+<p>The problem gives us a 'hash' of length 240 and a function that derives that hash.</p>
+<p>Hash: </p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>783f3977627a693a320f313e421e29513e036e485565360a172b00790c211a7b117b4a7814510b2d4b0b01465448580a0369520824294c670c3758706407013e271b624934147f1e70187c1c72666949405c5b4550495e5e02390607217f11695a61587c6351536b741d301d6d182c48254e7f4927683d19
+</span></code></pre>
+<p>Code:</p>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span style="color:#b48ead;">from </span><span>pwn </span><span style="color:#b48ead;">import </span><span style="color:#d08770;">*
+</span><span>
+</span><span>plaintext = </span><span style="color:#b48ead;">b</span><span>&#39;</span><span style="color:#a3be8c;">****************************************</span><span>&#39;
+</span><span>key1 = </span><span style="color:#b48ead;">b</span><span>&#39;</span><span style="color:#a3be8c;">****************************************</span><span>&#39;
+</span><span>key2 = </span><span style="color:#b48ead;">b</span><span>&#39;</span><span style="color:#a3be8c;">****************************************</span><span>&#39;
+</span><span>
+</span><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">shield_combination</span><span>(</span><span style="color:#bf616a;">p</span><span>, </span><span style="color:#bf616a;">k1</span><span>, </span><span style="color:#bf616a;">k2</span><span>):
+</span><span>	A = </span><span style="color:#bf616a;">xor</span><span>(p, k1, k2)
+</span><span>	B = </span><span style="color:#bf616a;">xor</span><span>(p, k1)
+</span><span>	C = </span><span style="color:#bf616a;">xor</span><span>(p, k2)
+</span><span>	</span><span style="color:#b48ead;">return </span><span>A + B + C
+</span><span>
+</span><span style="color:#96b5b4;">print</span><span>(</span><span style="color:#bf616a;">shield_combination</span><span>(plaintext, key1, key2).</span><span style="color:#bf616a;">hex</span><span>())
+</span></code></pre>
+<p>This code shows that the hash is simply a combination of xor(p,k1,k2), xor(p,k1), and xor(p,k2). Because the xor was used multiple times, this challenge is easily solvable. First, we should split the flag into it's three component parts:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>flag
+</span><span>a = &quot;783f3977627a693a320f313e421e29513e036e485565360a172b00790c211a7b117b4a7814510b2d&quot; 
+</span><span>b = &quot;4b0b01465448580a0369520824294c670c3758706407013e271b624934147f1e70187c1c72666949&quot; 
+</span><span>c = &quot;405c5b4550495e5e02390607217f11695a61587c6351536b741d301d6d182c48254e7f4927683d19&quot;
+</span></code></pre>
+<p>Then with this, we can derive the keys by using chunk A in reverse. We xor A with B, and that gives us key2, and we xor A with C, and that gives us key1. From here, all we have to do is plug it into xor(p,k1,k2) and we get the flag.</p>
+<p><img src="https://vaughn.sh/security/space-heroes/luggage-combination/cyberchefxor.png" alt="" /></p>
+<p><strong>Flag</strong>: <code>shctf{on3_e1GHt_hUnDR3d_D-R-U-I-D-I-A__}</code></p>
+
+
+            </main>
+            <footer>
+                
+<p class="taxonomies">
+
+</p>
+
+                
+            </footer>
+        </div>
+    </body>
+</html>
+        
