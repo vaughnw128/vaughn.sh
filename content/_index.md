@@ -8,7 +8,7 @@ Hello and welcome to my site. I've put this together to house some write-ups of 
 
 ## Who am I?
 
-I'm Vaughn, a 23 year old security engineer at {{ bounce_text(text="`<???>`") }} living in Brooklyn, NY. I went to university at Rochester Institute of Technology, got a degree in Cybersecurity, and was a member of the RITSEC security club.
+I'm Vaughn, a 23 year old security engineer at {{ bounce_text_small(text="<???>") }} living in Brooklyn, NY. I went to university at Rochester Institute of Technology, got a degree in Cybersecurity, and was a member of the RITSEC security club.
 I have an interest in many different domains of security but hold a particular love for automation and tooling. I was a line cook at various restaurants for a few years prior to working as a security engineer,
 and as such I have a section on this site dedicated to my recipes.
 
