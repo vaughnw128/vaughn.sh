@@ -11,7 +11,7 @@ became the obvious choice for when I'm craving this dish.
 I also give this dish the moniker "Crazy Style" because it has a few toppings that I really love that I don't see all too often on Yakisoba, that being benishoga (red pickled ginger), 
 katsuobushi (smoked and dried skipjack tuna), and kizami nori (seaweed). It's a lot going on at once, but it's wonderfully fishy, smokey, sweet, fragrant, and acidic all at the same time.
 
-A note on Arabiki:
+**A note on Arabiki:**
 
 Arabiki sausages are tiny smoked sausages made in Singapore, Japan, and Hawaii. They're small, snappy, and flavorful, and work perfectly when cut on a bias and quickly browned for this dish.
 This is not going to be an easy ingredient to find for most people, as it's typically sold only in Japanese grocery stores in the frozen section. An interesting replacement for this 
