@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+        <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+        <meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+        
+        
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+
+        <title>Guardians of the Galaxy</title>
+        
+        <meta name="title" content="Guardians of the Galaxy">
+        
+        
+        <meta name="generator" content="Zola v0.16.1">
+
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://vaughn.sh/security/space-heroes/guardians-of-the-galaxy/">
+        <meta property="og:site_name" content="">
+        <meta property="og:title" content="Guardians of the Galaxy">
+        
+        
+
+        
+        
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:url" content="https://vaughn.sh/security/space-heroes/guardians-of-the-galaxy/">
+        <meta property="twitter:title" content="Guardians of the Galaxy">
+        
+        
+        
+        
+        <link rel="canonical" href="https://vaughn.sh/security/space-heroes/guardians-of-the-galaxy/">
+        
+        <script type="application/ld+json">
+            {
+                
+                "url":"https://vaughn.sh/security/space-heroes/guardians-of-the-galaxy/",
+                "@type":"WebSite",
+                "headline":"Guardians of the Galaxy",
+                "name":"Guardians of the Galaxy",
+                
+                "@context":"https://schema.org"
+            }
+        </script>
+        
+        
+        
+        <link rel="stylesheet" href="https://vaughn.sh/style.css"/>
+        
+    </head>
+    <body theme="auto">
+        <div class="w">
+            <header>
+                
+                <nav>
+                    
+                    <a href="/" >@home</a>
+                    
+                    <a href="/recipes" >#recipes</a>
+                    
+                    <a href="/security" >+security</a>
+                    
+                    <a href="/hobbies" >$hobbies</a>
+                    
+                    <a href="https://github.com/vaughnw128" >~github</a>
+                    
+                    <a href="https://sbcord.com" >!friends</a>
+                    
+                </nav>
+                
+                
+<p><a href="..">..</a>/guardians-of-the-galaxy</p>
+<p class="post-meta"><time datetime=""></time></p>
+<h1>Guardians of the Galaxy</h1>
+
+            </header>
+            <main class="page-content" aria-label="Content">
+                
+
+
+
+<p><strong>Category:</strong> Reverse Engineering
+<strong>Points:</strong> ???
+<strong>Solved By:</strong> Apicius</p>
+<h2 id="challenge">Challenge</h2>
+<blockquote>
+<p>Only those who know the password can unlock the power of the system. But be warned, the password is as elusive as the Guardians themselves - <strong>hidden in the depths of Xandar or floating in the vastness of Knowhere.</strong></p>
+<p>Are you ready to take on the challenge and prove yourself a true Guardian? Remember, as Groot would say, <strong>'I am Groot'</strong> is not the password you are looking for.</p>
+<p><em>Author: bl4ckp4r4d1s3</em></p>
+</blockquote>
+<p>Files: <code>guardians_of_the_galaxy.bin</code></p>
+<h2 id="solution">Solution</h2>
+<p>This reverse engineering challenge required that you send a properly formatted 'password' to the program in order to get the flag. However, it would seem that the password <em>is</em> the flag.</p>
+<p><img src="https://vaughn.sh/security/space-heroes/guardians-of-the-galaxy/groot_password_prompt.png" alt="" /></p>
+<p>We're first prompted with an enter password screen. This doesn't do us much good so I opened it in Ghidra like any responsible reverse engineer-er.</p>
+<p>Inside the main function there is some logic to check whether the password you entered is correct. First it checks if the password is 27 characters long, then checks if certain parts of it are equal to certain strings. These strings look suspicious, though.</p>
+<p><img src="https://vaughn.sh/security/space-heroes/guardians-of-the-galaxy/groot_main.png" alt="" /></p>
+<p>When observing the code closely, the atox and r functions are performing operations on the 3 substrings of the flag and then checking to see if you've entered it properly. These can be easily reversed by seeing how the functions work.</p>
+<p><img src="https://vaughn.sh/security/space-heroes/guardians-of-the-galaxy/r_func.png" alt="" />
+<img src="https://vaughn.sh/security/space-heroes/guardians-of-the-galaxy/atox_func.png" alt="" /></p>
+<p>For the function r, it seems that the characters are having four subtracted from their value. This can be simply reversed by just doing the opposite: adding four. With atox on the other hand, all it's doing is converting the string to hex. If we reverse these and recombine them, we get the flag.</p>
+<p><img src="https://vaughn.sh/security/space-heroes/guardians-of-the-galaxy/groot_flag.png" alt="" /></p>
+<p><strong>Flag:</strong>  <code>shctf{5ky_1s_n0t_th3_l1m1t}</code></p>
+
+
+            </main>
+            <footer>
+                
+<p class="taxonomies">
+
+</p>
+
+                
+            </footer>
+        </div>
+    </body>
+</html>
+        

@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+        <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+        <meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+        
+        
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+
+        <title>Perfect Match X-treme</title>
+        
+        <meta name="title" content="Perfect Match X-treme">
+        
+        
+        <meta name="generator" content="Zola v0.16.1">
+
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://vaughn.sh/security/project-sekai-2022/perfect-match-x-treme/">
+        <meta property="og:site_name" content="">
+        <meta property="og:title" content="Perfect Match X-treme">
+        
+        
+
+        
+        
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:url" content="https://vaughn.sh/security/project-sekai-2022/perfect-match-x-treme/">
+        <meta property="twitter:title" content="Perfect Match X-treme">
+        
+        
+        
+        
+        <link rel="canonical" href="https://vaughn.sh/security/project-sekai-2022/perfect-match-x-treme/">
+        
+        <script type="application/ld+json">
+            {
+                
+                "url":"https://vaughn.sh/security/project-sekai-2022/perfect-match-x-treme/",
+                "@type":"WebSite",
+                "headline":"Perfect Match X-treme",
+                "name":"Perfect Match X-treme",
+                
+                "@context":"https://schema.org"
+            }
+        </script>
+        
+        
+        
+        <link rel="stylesheet" href="https://vaughn.sh/style.css"/>
+        
+    </head>
+    <body theme="auto">
+        <div class="w">
+            <header>
+                
+                <nav>
+                    
+                    <a href="/" >@home</a>
+                    
+                    <a href="/recipes" >#recipes</a>
+                    
+                    <a href="/security" >+security</a>
+                    
+                    <a href="/hobbies" >$hobbies</a>
+                    
+                    <a href="https://github.com/vaughnw128" >~github</a>
+                    
+                    <a href="https://sbcord.com" >!friends</a>
+                    
+                </nav>
+                
+                
+<p><a href="..">..</a>/perfect-match-x-treme</p>
+<p class="post-meta"><time datetime=""></time></p>
+<h1>Perfect Match X-treme</h1>
+
+            </header>
+            <main class="page-content" aria-label="Content">
+                
+
+
+
+<p><strong>Category:</strong> Reverse Engineering
+<strong>Points:</strong> 100
+<strong>Solved By:</strong> Apicius</p>
+<h2 id="challenge">Challenge</h2>
+<blockquote>
+<p>Can you qualify Fall Guy’s <em>Perfect Match</em> and get the flag?</p>
+<p><em>Author: sahuang &amp; enscribe</em></p>
+</blockquote>
+<p>Files: <code>Perfect_Match_X-treme.zip</code></p>
+<h2 id="solution">Solution</h2>
+<p>This problem required you beat a game of 'Fall Guys' icon matching in a Unity made game. However, by a cruel twist of fate, in the third round all of the platforms disappear. How unfair.</p>
+<p><img src="https://vaughn.sh/security/project-sekai-2022/perfect-match-x-treme/fallguys.png" alt="" /></p>
+<p>Because this is a Unity game and we have the whole Build folder, I thought I'd take a look at the code. I loaded up <code>Build/PerfectMatch_Data/Managed/Assembly-CSharp.dll</code> in dnSpy and took a look at it. Within the UI class we can see where the win condition is checked for and where the flag is displayed. </p>
+<p><img src="https://vaughn.sh/security/project-sekai-2022/perfect-match-x-treme/fallguyscode.png" alt="" /></p>
+<p>This code snippet is what's executed when the game is over (either losing or winning). If the game is won, game objects that store the flag text will be popped into existence and shown to the player. In order to get the flag, I simply edited the decompiled method to set the game text to <code>this.text1.text+this.text2.text+this.text3.text</code> when you lose. I recompiled the code and reran the game. Now all I need to do is lose! I accomplished this by jumping off the edge as soon as the round started. The flag is then printed straight to the screen.</p>
+<p><strong>Flag:</strong>  <code>SEKAI{F4LL_GUY5_H3CK_15_1LL3G4L}</code></p>
+<p><img src="https://vaughn.sh/security/project-sekai-2022/perfect-match-x-treme/fallguysflag.png" alt="" /></p>
+
+
+            </main>
+            <footer>
+                
+<p class="taxonomies">
+
+</p>
+
+                
+            </footer>
+        </div>
+    </body>
+</html>
+        
