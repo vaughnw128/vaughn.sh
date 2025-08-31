@@ -75,3 +75,29 @@ some of it to the point where it's sufficiently comprehensible. In the coming we
 I devoted to grammar over to reading and more active listening. There's no effective learning without input. I think I'll pick out an anime series
 to watch from the start and sentence mine w/ Yomitan for both grammar and vocab, and add that into my daily routine. Morg has a good list
 of entry level manga to read, so that may also be a good starting off point.
+
+### 8/31/2025 ~ [Unsurety and Triumph]
+
+I think to myself pretty often thoughts of unsurety in my mission to learn Japanese. "Am I working hard enough? Is it possible for me to achieve my goal? Will I just give up?" 
+These kinds of thoughts makes it quite hard to stay motivated. It's not constant, and rather comes and goes; I'm consistently motivated and unconsistently unmotivated, I guess. 
+The line to teeter between burnout and passion is one that is hard walked, and I can never know my proximity until the line has been crossed. 
+I feel as though I'm not only learning a language, but also learning many things about myself through this process. I set out with the question of "Can I learn this thing 
+which is incredibly difficult," and I really and truly want to prove to myself that I can. I'm particularly worried I'm not doing a good enough job with reading and sentence mining,
+and that I'm taking lazy approaches to learning. It's hard to be confident about my skills to take on harder material when much of it is not comprehensible.
+
+Okay okay, stupid self-confidence related rambling out of the way. Somehwere in the past month, I surpassed 1000 words of my vocabulary list Kaishi 1.5k. 
+At this point I'm at 1239, and on track to complete the list by the end of September. Tomorrow is also my 100th day of the list at least, 
+and that means I've passed 100 days of Japanese studying! It feels pretty weird to know how far I've come already. That distance is nothing compared to what's ahead, though. 
+I think and believe the groundwork and study rhythm I've set for myself has been pretty pivotal to my success thus far, and makes some of the consistent daily effort much easier.
+
+I've upped the difficulty of some of my listening stuff. I still listen to Okkei Japanese, as well as Nihongo con Teppei, but the latter is not my favorite. I've added some others such as 
+"Speak Japanese Naturally" and "YUYUの日本語Podcast." These I feel are much better at more true-to-life scenarios. Some sentences from these have been making perfect sense on first listen and
+I've had some good opportunities to look up words from these and form a much easier connection with. I average about 1.5 to 2 hours of listening every day while I work, walk, and cook.
+
+In the last month I also started reading. The first attempt was... demotivating. I tried reading a short story called "記憶の森の魔女" and it was far too hard for my current level of knowledge.
+I'd love to come back to it later though as it seemed quite interesting. Finding Japanese short stories in ePub form has been like pulling teeth. I finally found a source for graded reading at
+[JGRPG Sakura](https://jgrpg-sakura.com/) and that's been a life saver. I finished a story "蜘蛛の糸" and have started a small series of stories called "圭太とネコ石." The first one was quite 
+easy, but helped me get a sense of more complex grammatical structures rather than just grammar. It had quite a bit of repetition but let me see things I have not been previously exposed to.
+I've been using these stories to add to my sentence mining deck, but my study of that has been rather inconsistent. I must improve that!
+
+This past month has been the strongest for my learning journey, but the most difficult both mentally and emotionally. I will not give up. 自分を裏切りたくない。
