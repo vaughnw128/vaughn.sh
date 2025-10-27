@@ -11,11 +11,11 @@ Tender pork to use for tacos, rice bowls, ramen, or quesadillas. Anywhere that y
 - 4 lbs. Pork Shoulder
 - 1 Onion quartered
 - 1 Orange quartered
-- 8 cloves of garlic smashed with a knife
+- 8 cloves of garlic whole, or smashed with a knife
 - 1.5 Tbsp salt
-- 1/3 Cup oil
-- Bay leaves and fresh oregano (optional)
-- Cinnamon (Optional)
+- 1/3 Cup oil - I typically use canola, but lard is traditional from what I've seen
+- Bay leaves and fresh oregano
+- Cinammon - 1/4 tsp powdered or a small piece of whole cinammon. 
 
 ## Directions
 1. Cut pork into large 2-inch cubes.
