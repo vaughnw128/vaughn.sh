@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+        <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+        <meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+        
+        
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+
+        <title>Proxmox LV&#x2F;Disk Resizing</title>
+        
+        <meta name="title" content="Proxmox LV&#x2F;Disk Resizing">
+        
+        
+        <meta name="generator" content="Zola v0.16.1">
+
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://vaughn.sh/hobbies/homelab/proxmox-resize/">
+        <meta property="og:site_name" content="">
+        <meta property="og:title" content="Proxmox LV&#x2F;Disk Resizing">
+        
+        
+
+        
+        
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:url" content="https://vaughn.sh/hobbies/homelab/proxmox-resize/">
+        <meta property="twitter:title" content="Proxmox LV&#x2F;Disk Resizing">
+        
+        
+        
+        
+        <link rel="canonical" href="https://vaughn.sh/hobbies/homelab/proxmox-resize/">
+        
+        <script type="application/ld+json">
+            {
+                
+                "url":"https://vaughn.sh/hobbies/homelab/proxmox-resize/",
+                "@type":"WebSite",
+                "headline":"Proxmox LV/Disk Resizing",
+                "name":"Proxmox LV/Disk Resizing",
+                
+                "@context":"https://schema.org"
+            }
+        </script>
+        
+        
+        
+        <link rel="stylesheet" href="https://vaughn.sh/style.css"/>
+        
+    </head>
+    <body theme="auto">
+        <div class="w">
+            <header>
+                
+                <nav>
+                    
+                    <a href="/" >@home</a>
+                    
+                    <a href="/recipes" >#recipes</a>
+                    
+                    <a href="/security" >+security</a>
+                    
+                    <a href="/hobbies" >$hobbies</a>
+                    
+                    <a href="https://github.com/vaughnw128" >~github</a>
+                    
+                    <a href="https://sbcord.com" >!friends</a>
+                    
+                </nav>
+                
+                
+<p><a href="..">..</a>/proxmox-resize</p>
+<p class="post-meta"><time datetime=""></time></p>
+<h1>Proxmox LV&#x2F;Disk Resizing</h1>
+
+            </header>
+            <main class="page-content" aria-label="Content">
+                
+
+
+
+<h2 id="how-to-resize-your-vms-disk-in-proxmox">How to resize your VMs disk in Proxmox</h2>
+<p>This is an activity I infrequently do and consistently forget. I document it here only to spur my own knowledge, but if you find  this useful that brings me immense joy.</p>
+<p>Do as follows:</p>
+<ol>
+<li>Expand the disk in Proxmox via the UI. This can be done via the Hardware &gt; Disk Action &gt; Expand button.</li>
+<li>Reboot the VM</li>
+<li>SSH in, and run the following commands</li>
+</ol>
+<pre data-lang="shell" style="background-color:#2b303b;color:#c0c5ce;" class="language-shell "><code class="language-shell" data-lang="shell"><span>$ growpart /dev/sda3
+</span><span>$ pvresize /dev/sda 3
+</span><span>$ lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv
+</span><span>$ resize2fs /dev/ubuntu-vg/ubuntu-lv
+</span></code></pre>
+<p>Enjoy your newly acquired disk space!</p>
+
+
+            </main>
+            <footer>
+                
+<p class="taxonomies">
+
+</p>
+
+                
+            </footer>
+        </div>
+    </body>
+</html>
+        
