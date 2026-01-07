@@ -101,3 +101,45 @@ easy, but helped me get a sense of more complex grammatical structures rather th
 I've been using these stories to add to my sentence mining deck, but my study of that has been rather inconsistent. I must improve that!
 
 This past month has been the strongest for my learning journey, but the most difficult both mentally and emotionally. I will not give up. 自分を裏切りたくない。
+
+### 1/6/2025 ~ [お正月のあとで勉強がどんどん続けりたい！]
+
+あけましておめでとうございます！ Happy new years! ひさしぶりですね。 It's been a while, eh?
+
+It's been a bit since I wrote here last, and a lot has happened since then, particularly in my personal life. Saying it threw off my study habits would frankly be a copout, and a lie.
+First, I must report, I have absolutely not given up my study. Not a single day of Anki has been missed, and I have kept up with my listening practice as much as possible*.
+I've said this before, but a lot of this learning just makes you feel as if you're colossally stupid. It's like running a race where the finish like moves 10 feet ahead of you, no matter
+how fast you run. Now this is not a bad thing by any means. It's just the nature of learning something where the results do not really begin to materialize for a while, ie, the language fluency barrier.
+It is really just demotivating. It feels as if you are making no progress. 
+
+I've had a few incredible wins in the past few months, though, that have kept me going.
+
+1. **I finished Kaishi 1.5k.**
+
+It felt pretty awesome to finish this. I had/have a pretty good retention rate for a lot of the vocabulary in there, and it has made reading a lot of stuff substantially easier.
+The variety of the grammar has also lead to an understanding of some basic kanji. Both pronunciations and meanings were able to be derived over time by encountering words with overlapping kanji.
+The completion of this has also felt like a graduation in a less-than-ideal sense. I've kept up with Anki every day, reviewing the words, but I have not been adding to my sentence mining deck much.
+This is something I need to improve on, and I'm looking at better behavioral tweaks to make in my study routine to make this happen more.
+
+2. **JLPT N5**
+
+If you're not familiar, the Japanese Language Placement Tests have 5 levels, ranging from N5 (easiest) to N1 (hardest).
+I took a pretty long and detailed N5 practice test in December, and scored well above passing. The test was ~1.5 hours long with multiple sections including reading and listening.
+According to many people online, this was a pretty good metric for whether I'd pass the 'real thing.'
+
+3. **My barber**
+
+About a week ago I went to see my barber for a haircut. My brother and I both go to the same barber, and he told her I have been learning Japanese.
+What ensued was about an hour of me listening to her (pretty well, I might add!) and speaking back to her in pretty broken Japanese. There were things I got wrong,
+and sentences came into my mind very sluggishly. But I was able to communicate! The listening was far easier than speaking. Speaking really felt like I was
+trying to construct the sentences in my head with hand tools, and barely able to get them out the door before the conversation had moved on. 
+The whole experience was awesome though, and it made me feel as though the effort was really paying off in a tangible way. I'm looking forward
+to my next haircut and conversational quiz!
+
+---
+
+All of this is to say, yes, I am still studying, and no, I have and will not give up. 自分を諦めることは裏切りだ！I will be having a lot of free time soon-ish,
+so I'm hoping to do some fun _total-immersion-while-recovering-from-surgery_ action. Maybe that will be interesting? さあ、　またねー！
+
+
+
