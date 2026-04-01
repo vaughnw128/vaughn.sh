@@ -3,8 +3,13 @@ base_url = "https://vaughn.sh"
 
 compile_sass=true
 
-[markdown]
-highlight_code = true
+#[markdown]
+#highlighting = true
+
+[markdown.highlighting]
+error_on_missing_language = true
+style = "inline"
+theme = "tokyo-night"
 
 [extra]
 add_toc = true
