@@ -24,17 +24,17 @@ flavorful Chinese/Japanese BBQ spice mix.
 - 1 Tbsp sugar
 - 1 tsp MSG
 - 1 Tbsp fish sauce
-- 3 cloves grated garlic
-- 1 inch grated ginger
-- 1 Tbsp potato starch
+- 3 cloves garlic
+- 1 inch ginger
+- 3 Tbsp potato starch
 - Lemon zest
 
 ### Frying
-- Potato starch, around 3/4 cups to start
+- Potato starch, around 1 cup to start
 - 3 cups to 1 quart of neutral oil
 
 ## Directions
-1. First, prepare all marinade ingredients by combining them together in a large freezer bag or some sort of airtight container
+1. First, prepare all marinade ingredients by combining them together in a tall glass vessel, one suitable for blending with a stick blender. Blend with a stick blender until the garlic and ginger are fully incorporated and the marinade is homogenous. If you don't have a stick blender, you can finely grate the garlic and ginger and then mix all ingredients together.
 2. Let chicken marinate for at least 2 hours, up to 10-12. If more, the flavors may become too imposing. This is for lazy people after all!
 3. In a large bowl, add potato starch
 4. With one hand, add a bit of the marinade liquid while using the other hand to stir the potato starch. This will help to get some crackly bits on the outside

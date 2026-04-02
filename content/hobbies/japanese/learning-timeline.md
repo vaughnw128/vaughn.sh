@@ -141,5 +141,19 @@ to my next haircut and conversational quiz!
 All of this is to say, yes, I am still studying, and no, I have and will not give up. 自分を諦めることは裏切りだ！I will be having a lot of free time soon-ish,
 so I'm hoping to do some fun _total-immersion-while-recovering-from-surgery_ action. Maybe that will be interesting? さあ、　またねー！
 
+### 4/1/2026 - [腰が痛い]
+
+I got hip surgery! It's been pretty sweet thus far, honestly. Much less pain overall but I have a lot of movement restrictions, so I've been cooped up in my apartment mostly. They had to break my hip in four places to rotate the whole joint outwards! If you're curious about it, the procedure is called a [Periacetabular Osteotomy](https://www.hss.edu/health-library/conditions-and-treatments/pao-periacetabular-osteotomy). This did give me a lot of time to do some extra studying and it has absolutely paid off. I managed to still not miss a single day of my Anki grind, and even studied while under heavy painkiller influence while I was in the hospital. I did ultimately have a small study break, though, where I mostly just kept up with Anki for a few weeks while getting through the initial recovery. Painkillers and general pain and immobility clouding my brain and all.
+
+Once I was feeling well enough I decided to put far more work into my Kanji study, as well as grammar review. For Kanji I have been utilizing the Kodansha Kanji Learner's course and I am currently around 400 Kanji deep into it. I combine this with a KKLC deck on Anki in order to practice both recognition and recall, and I write every Kanji 10 or so times (with the proper stroke order, of course) in a notebook to really drill it in. In general this has been an incredible method and I have been having a very easy time shoving these characters into my mind.
+
+For grammar, I'm working on reviewing all of the stuff I have done before, and I am going through all of the Anki lessons to create my own sets of example sentences to make sure I have 'full' understanding of each grammar concept. You can check them out at [example-sentences](./example-sentences), and they will be updated over time as I do my review.
+
+For reading I have gotten so insanely bored with the structured graded readers. It's really a pain in the ass to get through these with the incredibly boring stories. Sorry!! Instead, I've downloaded コンビニ人間 and I'm going to try getting a good bit through this as a goal by the end of the month. 
+
+I'm trying to contact the Japan Society of New York to get access to a private language tutor to make ample use of my yearly bonus and see how it is working with a more knowledgeable expert than just self studying. It may be good for me, or it may not be very fruitful, but everything is worth trying!
+
+That's it for my every-so-often Japanese update. Thanks for tuning in, and I'll let you know what's up when I'm feeling like it again!
+
 
 
