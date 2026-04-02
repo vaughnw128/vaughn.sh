@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+        <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+        <meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+        
+        
+        
+
+        
+
+        
+
+        
+
+        
+        
+        
+
+        <title>Space Rover</title>
+        
+        <meta name="title" content="Space Rover">
+        
+        
+        <meta name="generator" content="Zola v0.16.1">
+
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://vaughn.sh/security/space-heroes/cryptographic-space-rover/">
+        <meta property="og:site_name" content="">
+        <meta property="og:title" content="Space Rover">
+        
+        
+
+        
+        
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:url" content="https://vaughn.sh/security/space-heroes/cryptographic-space-rover/">
+        <meta property="twitter:title" content="Space Rover">
+        
+        
+        
+        
+        <link rel="canonical" href="https://vaughn.sh/security/space-heroes/cryptographic-space-rover/">
+        
+        <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "url": "https://vaughn.sh/security/space-heroes/cryptographic-space-rover/",
+  "name": "Space Rover",
+  "description": "",
+  "author": {
+    "@type": "Person",
+    "name": ""
+  }
+}
+        </script>
+        
+        
+        
+        <link rel="stylesheet" href="https://vaughn.sh/style.css"/>
+        
+        
+     </head>
+     <body theme="auto">
+        <div class="w">
+            <header>
+                
+                <nav>
+                    
+                    
+                    <a href="/">@home</a>
+                    
+                    
+                    
+                    <a href="/recipes">#recipes</a>
+                    
+                    
+                    
+                    <a href="/security">+security</a>
+                    
+                    
+                    
+                    <a href="/hobbies">$hobbies</a>
+                    
+                    
+                    
+                    <a href="https://github.com/vaughnw128">~github</a>
+                    
+                    
+                    
+                    <a href="https://sbcord.com">!friends</a>
+                    
+                    
+                </nav>
+                
+                
+<p><a href="..">..</a>/cryptographic-space-rover</p>
+<p class="post-meta"><time datetime=""></time></p>
+<h1>Space Rover</h1>
+
+            </header>
+            <main class="page-content" aria-label="Content">
+                
+
+
+
+<p><strong>Category:</strong> Crypto</p>
+<p><strong>Points:</strong> ???</p>
+<p><strong>Solved By:</strong> Apicius</p>
+<h2 id="challenge">Challenge</h2>
+<blockquote>
+<p>NASA has sent this custom program off to a remote space rover, luckily it already had Python and all the dependencies installed so we don't have to worry about transferring those. It will print the CPU usage and some fun other facts about the system when it's run. It seems to run an equal number of time to the number of characters entered. For some reason, certain characters at certain indexes cause new processes to spawn... can you help us find what characters to avoid at certain indexes?</p>
+<p><em>Author: teeman22</em></p>
+</blockquote>
+<p>Files: <code>nasa_crypto.py</code></p>
+<h2 id="solution">Solution</h2>
+<p>This was for sure my favorite challenge of the competition, as I got to do some cool scripting.</p>
+<p>Reading <code>nasa_crypto.py</code> reveals how we have to solve the challenge: brute force guessing.</p>
+<pre class="giallo" style="color: #A9B1D6; background-color: #1A1B26;"><code data-lang="python"><span class="giallo-l"><span style="color: #BB9AF7;">def</span><span style="color: #7AA2F7;"> main</span><span style="color: #9ABDF5;">():</span></span>
+<span class="giallo-l"><span>    session_uuid</span><span style="color: #89DDFF;"> =</span><span> uuid</span><span style="color: #89DDFF;">.</span><span style="color: #7AA2F7;">uuid4</span><span style="color: #9ABDF5;">()</span></span>
+<span class="giallo-l"><span>    flag</span><span style="color: #89DDFF;"> =</span><span style="color: #0DB9D7;"> open</span><span style="color: #9ABDF5;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #9ECE6A;">flag.txt</span><span style="color: #89DDFF;">&#39;, &#39;</span><span style="color: #9ECE6A;">r</span><span style="color: #89DDFF;">&#39;</span><span style="color: #9ABDF5;">)</span><span style="color: #89DDFF;">.</span><span style="color: #7AA2F7;">readline</span><span style="color: #9ABDF5;">()</span><span style="color: #89DDFF;">.</span><span style="color: #7AA2F7;">strip</span><span style="color: #9ABDF5;">(</span><span style="color: #89DDFF;">&#39;\n&#39;</span><span style="color: #9ABDF5;">)</span><span style="color: #89DDFF;">.</span><span style="color: #7AA2F7;">lower</span><span style="color: #9ABDF5;">()</span></span>
+<span class="giallo-l"><span style="color: #7AA2F7;">    logo</span><span style="color: #9ABDF5;">(</span><span style="color: #C0CAF5;">session_uuid</span><span style="color: #9ABDF5;">)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #0DB9D7;">    print</span><span style="color: #9ABDF5;">(</span><span style="color: #89DDFF;">&quot;</span><span style="color: #9ECE6A;">Please enter characters:: </span><span style="color: #89DDFF;">&quot;</span><span style="color: #9ABDF5;">)</span></span>
+<span class="giallo-l"><span>    user_guess</span><span style="color: #89DDFF;"> =</span><span style="color: #0DB9D7;"> input</span><span style="color: #9ABDF5;">()</span><span style="color: #89DDFF;">.</span><span style="color: #7AA2F7;">lower</span><span style="color: #9ABDF5;">()</span><span style="color: #89DDFF;">.</span><span style="color: #7AA2F7;">strip</span><span style="color: #9ABDF5;">(</span><span style="color: #89DDFF;">&quot;\n&quot;</span><span style="color: #9ABDF5;">)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #BB9AF7;">    for</span><span> i</span><span style="color: #BB9AF7;"> in</span><span style="color: #0DB9D7;"> range</span><span style="color: #9ABDF5;">(</span><span style="color: #FF9E64;">0</span><span style="color: #89DDFF;">,</span><span style="color: #0DB9D7;"> len</span><span style="color: #9ABDF5;">(</span><span style="color: #C0CAF5;">flag</span><span style="color: #9ABDF5;">))</span><span style="color: #89DDFF;">:</span></span>
+<span class="giallo-l"><span style="color: #BB9AF7;">        if</span><span> i</span><span style="color: #89DDFF;">+</span><span style="color: #FF9E64;">1</span><span style="color: #BB9AF7;"> &gt;</span><span style="color: #0DB9D7;"> len</span><span style="color: #9ABDF5;">(</span><span style="color: #C0CAF5;">user_guess</span><span style="color: #9ABDF5;">)</span><span style="color: #89DDFF;">:</span></span>
+<span class="giallo-l"><span style="color: #7AA2F7;">            print_top</span><span style="color: #9ABDF5;">(</span><span style="color: #E0AF68;">guess</span><span style="color: #89DDFF;">=</span><span style="color: #FF9E64;">None</span><span style="color: #89DDFF;">,</span><span style="color: #E0AF68;"> uuid</span><span style="color: #89DDFF;">=</span><span style="color: #C0CAF5;">session_uuid</span><span style="color: #9ABDF5;">)</span></span>
+<span class="giallo-l"><span style="color: #0DB9D7;">            exit</span><span style="color: #9ABDF5;">(</span><span style="color: #89DDFF;">-</span><span style="color: #FF9E64;">1</span><span style="color: #9ABDF5;">)</span></span>
+<span class="giallo-l"><span style="color: #BB9AF7;">        elif</span><span style="color: #89DDFF;"> (</span><span>user_guess</span><span style="color: #9ABDF5;">[</span><span>i</span><span style="color: #9ABDF5;">]</span><span style="color: #BB9AF7;"> !=</span><span> flag</span><span style="color: #9ABDF5;">[</span><span>i</span><span style="color: #9ABDF5;">]</span><span style="color: #89DDFF;">):</span></span>
+<span class="giallo-l"><span style="color: #7AA2F7;">            print_top</span><span style="color: #9ABDF5;">(</span><span style="color: #E0AF68;">guess</span><span style="color: #89DDFF;">=</span><span style="color: #FF9E64;">False</span><span style="color: #89DDFF;">,</span><span style="color: #E0AF68;"> uuid</span><span style="color: #89DDFF;">=</span><span style="color: #C0CAF5;">session_uuid</span><span style="color: #9ABDF5;">)</span></span>
+<span class="giallo-l"><span style="color: #BB9AF7;">        else</span><span style="color: #89DDFF;">:</span></span>
+<span class="giallo-l"><span style="color: #7AA2F7;">            print_top</span><span style="color: #9ABDF5;">(</span><span style="color: #E0AF68;">guess</span><span style="color: #89DDFF;">=</span><span style="color: #FF9E64;">True</span><span style="color: #89DDFF;">,</span><span style="color: #E0AF68;">uuid</span><span style="color: #89DDFF;">=</span><span style="color: #C0CAF5;">session_uuid</span><span style="color: #9ABDF5;">)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #BB9AF7;">    if</span><span> user_guess</span><span style="color: #BB9AF7;"> ==</span><span> flag</span><span style="color: #89DDFF;">:</span></span>
+<span class="giallo-l"><span style="color: #0DB9D7;">        print</span><span style="color: #9ABDF5;">(</span><span style="color: #BB9AF7;">f</span><span style="color: #9ECE6A;">&quot;Thanks; we&#39;ll avoid these characters: </span><span style="color: #BB9AF7;">{</span><span style="color: #C0CAF5;">flag</span><span style="color: #BB9AF7;">}</span><span style="color: #9ECE6A;">&quot;</span><span style="color: #9ABDF5;">)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #BB9AF7;">if</span><span style="color: #C0CAF5;"> __name__</span><span style="color: #BB9AF7;"> ==</span><span style="color: #89DDFF;"> &quot;</span><span style="color: #9ECE6A;">__main__</span><span style="color: #89DDFF;">&quot;:</span></span>
+<span class="giallo-l"><span style="color: #7AA2F7;">    main</span><span style="color: #9ABDF5;">()</span></span></code></pre>
+<p>The main function prompts the user for a guess of the flag. It then loops along the flag and checks whether the guessed character at that location is the same as the flags. If it isnt, it passes guess=False. If it is, it passes guess=True. If the user guess is too short, it passes nothing and then exits the program.</p>
+<p>Checking the print_top function we can see our returned indicator for if the guess is correct:</p>
+<pre class="giallo" style="color: #A9B1D6; background-color: #1A1B26;"><code data-lang="python"><span class="giallo-l"><span style="color: #BB9AF7;">def</span><span style="color: #7AA2F7;"> get_dashes</span><span style="color: #9ABDF5;">(</span><span style="color: #E0AF68;">perc</span><span style="color: #9ABDF5;">):</span></span>
+<span class="giallo-l"><span>    dashes</span><span style="color: #89DDFF;"> = &quot;</span><span style="color: #9ECE6A;">|</span><span style="color: #89DDFF;">&quot; *</span><span style="color: #0DB9D7;"> int</span><span style="color: #9ABDF5;">(</span><span style="color: #89DDFF;">(</span><span style="color: #0DB9D7;">float</span><span style="color: #9ABDF5;">(</span><span style="color: #C0CAF5;">perc</span><span style="color: #9ABDF5;">)</span><span style="color: #89DDFF;"> /</span><span style="color: #FF9E64;"> 10</span><span style="color: #89DDFF;"> *</span><span style="color: #FF9E64;"> 4</span><span style="color: #89DDFF;">)</span><span style="color: #9ABDF5;">)</span></span>
+<span class="giallo-l"><span>    empty_dashes</span><span style="color: #89DDFF;"> = &quot; &quot; * (</span><span style="color: #FF9E64;">40</span><span style="color: #89DDFF;"> -</span><span style="color: #0DB9D7;"> len</span><span style="color: #9ABDF5;">(</span><span style="color: #C0CAF5;">dashes</span><span style="color: #9ABDF5;">)</span><span style="color: #89DDFF;">)</span></span>
+<span class="giallo-l"><span style="color: #BB9AF7;">    return</span><span> dashes</span><span style="color: #89DDFF;">,</span><span> empty_dashes</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #BB9AF7;">def</span><span style="color: #7AA2F7;"> print_top</span><span style="color: #9ABDF5;">(</span><span style="color: #E0AF68;">guess</span><span style="color: #89DDFF;">,</span><span style="color: #E0AF68;"> uuid</span><span style="color: #9ABDF5;">):</span></span>
+<span class="giallo-l"><span>    cat_check</span><span style="color: #89DDFF;"> =</span><span style="color: #FF9E64;"> 0</span></span>
+<span class="giallo-l"><span style="color: #BB9AF7;">    if</span><span style="color: #89DDFF;">(</span><span>guess</span><span style="color: #BB9AF7;"> ==</span><span style="color: #FF9E64;"> True</span><span style="color: #89DDFF;">):</span></span>
+<span class="giallo-l"><span>        setproctitle</span><span style="color: #89DDFF;">.</span><span style="color: #7AA2F7;">setproctitle</span><span style="color: #9ABDF5;">(</span><span style="color: #0DB9D7;">str</span><span style="color: #9ABDF5;">(</span><span style="color: #C0CAF5;">uuid</span><span style="color: #9ABDF5;">))</span></span>
+<span class="giallo-l"><span>        setproctitle</span><span style="color: #89DDFF;">.</span><span style="color: #7AA2F7;">setthreadtitle</span><span style="color: #9ABDF5;">(</span><span style="color: #0DB9D7;">str</span><span style="color: #9ABDF5;">(</span><span style="color: #C0CAF5;">uuid</span><span style="color: #9ABDF5;">))</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #0DB9D7;">    print</span><span style="color: #9ABDF5;">(</span><span style="color: #BB9AF7;">f</span><span style="color: #9ECE6A;">&quot;top - </span><span style="color: #BB9AF7;">{</span><span style="color: #0DB9D7;">str</span><span style="color: #9ABDF5;">(</span><span style="color: #C0CAF5;">datetime</span><span style="color: #89DDFF;">.</span><span style="color: #7AA2F7;">timedelta</span><span style="color: #9ABDF5;">(</span><span style="color: #E0AF68;">seconds</span><span style="color: #89DDFF;">=</span><span style="color: #C0CAF5;">psutil</span><span style="color: #89DDFF;">.</span><span style="color: #7AA2F7;">boot_time</span><span style="color: #9ABDF5;">()))</span><span style="color: #BB9AF7;">}</span><span style="color: #9ECE6A;">&quot;</span><span style="color: #9ABDF5;">)</span></span>
+<span class="giallo-l"><span>    percs</span><span style="color: #89DDFF;"> =</span><span> psutil</span><span style="color: #89DDFF;">.</span><span style="color: #7AA2F7;">cpu_percent</span><span style="color: #9ABDF5;">(</span><span style="color: #E0AF68;">interval</span><span style="color: #89DDFF;">=</span><span style="color: #FF9E64;">0</span><span style="color: #89DDFF;">,</span><span style="color: #E0AF68;"> percpu</span><span style="color: #89DDFF;">=</span><span style="color: #FF9E64;">True</span><span style="color: #9ABDF5;">)</span></span>
+<span class="giallo-l"><span style="color: #BB9AF7;">    for</span><span> cpu_num</span><span style="color: #89DDFF;">,</span><span> perc</span><span style="color: #BB9AF7;"> in</span><span style="color: #0DB9D7;"> enumerate</span><span style="color: #9ABDF5;">(</span><span style="color: #C0CAF5;">percs</span><span style="color: #9ABDF5;">)</span><span style="color: #89DDFF;">:</span></span>
+<span class="giallo-l"><span>        dashes</span><span style="color: #89DDFF;">,</span><span> empty_dashes</span><span style="color: #89DDFF;"> =</span><span style="color: #7AA2F7;"> get_dashes</span><span style="color: #9ABDF5;">(</span><span style="color: #C0CAF5;">perc</span><span style="color: #9ABDF5;">)</span></span>
+<span class="giallo-l"><span>        line</span><span style="color: #89DDFF;"> = &quot;</span><span style="color: #9ECE6A;"> CPU%-2s [%s%s] %5s%%</span><span style="color: #89DDFF;">&quot; % (</span><span>cpu_num</span><span style="color: #89DDFF;">,</span><span> dashes</span><span style="color: #89DDFF;">,</span><span> empty_dashes</span><span style="color: #89DDFF;">,</span><span> perc</span><span style="color: #89DDFF;">)</span></span>
+<span class="giallo-l"><span style="color: #0DB9D7;">        print</span><span style="color: #9ABDF5;">(</span><span style="color: #C0CAF5;">line</span><span style="color: #9ABDF5;">)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>    virtual_memory</span><span style="color: #89DDFF;"> =</span><span> psutil</span><span style="color: #89DDFF;">.</span><span style="color: #7AA2F7;">virtual_memory</span><span style="color: #9ABDF5;">()</span></span>
+<span class="giallo-l"><span style="color: #0DB9D7;">    print</span><span style="color: #9ABDF5;">(</span><span style="color: #BB9AF7;">f</span><span style="color: #9ECE6A;">&quot;MiB Swap :</span><span style="color: #89DDFF;">\t</span><span style="color: #BB9AF7;">{</span><span style="color: #C0CAF5;">virtual_memory</span><span style="color: #89DDFF;">.</span><span style="color: #C0CAF5;">total</span><span style="color: #89DDFF;"> /</span><span style="color: #FF9E64;"> 1024</span><span style="color: #89DDFF;"> /</span><span style="color: #FF9E64;"> 1024</span><span style="color: #BB9AF7;">:.2f}</span><span style="color: #9ECE6A;"> total</span><span style="color: #89DDFF;">\t</span><span style="color: #BB9AF7;">{</span><span style="color: #C0CAF5;">virtual_memory</span><span style="color: #89DDFF;">.</span><span style="color: #C0CAF5;">free</span><span style="color: #89DDFF;"> /</span><span style="color: #FF9E64;"> 1024</span><span style="color: #89DDFF;"> /</span><span style="color: #FF9E64;"> 1024</span><span style="color: #BB9AF7;">:.2f}</span><span style="color: #9ECE6A;"> free</span><span style="color: #89DDFF;">\t</span><span style="color: #BB9AF7;">{</span><span style="color: #C0CAF5;">virtual_memory</span><span style="color: #89DDFF;">.</span><span style="color: #C0CAF5;">used</span><span style="color: #89DDFF;"> /</span><span style="color: #FF9E64;"> 1024</span><span style="color: #89DDFF;"> /</span><span style="color: #FF9E64;"> 1024</span><span style="color: #BB9AF7;">:.2f}</span><span style="color: #9ECE6A;"> used</span><span style="color: #89DDFF;">\t</span><span style="color: #BB9AF7;">{</span><span style="color: #C0CAF5;">virtual_memory</span><span style="color: #89DDFF;">.</span><span style="color: #C0CAF5;">active</span><span style="color: #89DDFF;"> /</span><span style="color: #FF9E64;"> 1024</span><span style="color: #89DDFF;"> /</span><span style="color: #FF9E64;"> 1024</span><span style="color: #BB9AF7;">:.2f}</span><span style="color: #9ECE6A;"> active&quot;</span><span style="color: #9ABDF5;">)</span></span>
+<span class="giallo-l"><span>    swap_memory</span><span style="color: #89DDFF;"> =</span><span> psutil</span><span style="color: #89DDFF;">.</span><span style="color: #7AA2F7;">swap_memory</span><span style="color: #9ABDF5;">()</span></span>
+<span class="giallo-l"><span style="color: #0DB9D7;">    print</span><span style="color: #9ABDF5;">(</span><span style="color: #BB9AF7;">f</span><span style="color: #9ECE6A;">&quot;MiB Swap :</span><span style="color: #89DDFF;">\t</span><span style="color: #BB9AF7;">{</span><span style="color: #C0CAF5;">swap_memory</span><span style="color: #89DDFF;">.</span><span style="color: #C0CAF5;">total</span><span style="color: #89DDFF;"> /</span><span style="color: #FF9E64;"> 1024</span><span style="color: #89DDFF;"> /</span><span style="color: #FF9E64;"> 1024</span><span style="color: #BB9AF7;">:.2f}</span><span style="color: #9ECE6A;"> total</span><span style="color: #89DDFF;">\t</span><span style="color: #BB9AF7;">{</span><span style="color: #C0CAF5;">swap_memory</span><span style="color: #89DDFF;">.</span><span style="color: #C0CAF5;">free</span><span style="color: #89DDFF;"> /</span><span style="color: #FF9E64;"> 1024</span><span style="color: #89DDFF;"> /</span><span style="color: #FF9E64;"> 1024</span><span style="color: #BB9AF7;">:.2f}</span><span style="color: #9ECE6A;"> free</span><span style="color: #89DDFF;">\t</span><span style="color: #BB9AF7;">{</span><span style="color: #C0CAF5;">swap_memory</span><span style="color: #89DDFF;">.</span><span style="color: #C0CAF5;">used</span><span style="color: #89DDFF;"> /</span><span style="color: #FF9E64;"> 1024</span><span style="color: #89DDFF;"> /</span><span style="color: #FF9E64;"> 1024</span><span style="color: #BB9AF7;">:.2f}</span><span style="color: #9ECE6A;"> used&quot;</span><span style="color: #9ABDF5;">)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>    listOfProcessNames</span><span style="color: #89DDFF;"> = []</span></span>
+<span class="giallo-l"><span style="color: #BB9AF7;">    for</span><span> proc</span><span style="color: #BB9AF7;"> in</span><span> psutil</span><span style="color: #89DDFF;">.</span><span style="color: #7AA2F7;">process_iter</span><span style="color: #9ABDF5;">()</span><span style="color: #89DDFF;">:</span></span>
+<span class="giallo-l"><span>        pInfoDict</span><span style="color: #89DDFF;"> =</span><span> proc</span><span style="color: #89DDFF;">.</span><span style="color: #7AA2F7;">as_dict</span><span style="color: #9ABDF5;">(</span><span style="color: #E0AF68;">attrs</span><span style="color: #89DDFF;">=[&#39;</span><span style="color: #9ECE6A;">pid</span><span style="color: #89DDFF;">&#39;, &#39;</span><span style="color: #9ECE6A;">username</span><span style="color: #89DDFF;">&#39;, &#39;</span><span style="color: #9ECE6A;">cpu_percent</span><span style="color: #89DDFF;">&#39;, &#39;</span><span style="color: #9ECE6A;">memory_percent</span><span style="color: #89DDFF;">&#39;, &#39;</span><span style="color: #9ECE6A;">status</span><span style="color: #89DDFF;">&#39;, &#39;</span><span style="color: #9ECE6A;">name</span><span style="color: #89DDFF;">&#39;]</span><span style="color: #9ABDF5;">)</span><span style="color: #51597D;font-style: italic;"> # Get process detail as dictionary</span></span>
+<span class="giallo-l"><span>        listOfProcessNames</span><span style="color: #89DDFF;">.</span><span style="color: #7AA2F7;">append</span><span style="color: #9ABDF5;">(</span><span style="color: #C0CAF5;">pInfoDict</span><span style="color: #9ABDF5;">)</span><span style="color: #51597D;font-style: italic;"> # Add to list</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #0DB9D7;">    print</span><span style="color: #9ABDF5;">(</span><span style="color: #BB9AF7;">f</span><span style="color: #9ECE6A;">&#39;</span><span style="color: #BB9AF7;">{</span><span style="color: #89DDFF;">&quot;</span><span style="color: #9ECE6A;">PID</span><span style="color: #89DDFF;">&quot;</span><span style="color: #BB9AF7;">:&gt;6}{</span><span style="color: #89DDFF;">&quot;</span><span style="color: #9ECE6A;">USER</span><span style="color: #89DDFF;">&quot;</span><span style="color: #BB9AF7;">:&gt;10}{</span><span style="color: #89DDFF;">&quot;</span><span style="color: #9ECE6A;">%CPU</span><span style="color: #89DDFF;">&quot;</span><span style="color: #BB9AF7;">:&gt;6}{</span><span style="color: #89DDFF;">&quot;</span><span style="color: #9ECE6A;">%MEM</span><span style="color: #89DDFF;">&quot;</span><span style="color: #BB9AF7;">:&gt;6}{</span><span style="color: #89DDFF;">&quot;</span><span style="color: #9ECE6A;">STATUS</span><span style="color: #89DDFF;">&quot;</span><span style="color: #BB9AF7;">:&gt;15}{</span><span style="color: #89DDFF;">&quot;</span><span style="color: #9ECE6A;">NAME</span><span style="color: #89DDFF;">&quot;</span><span style="color: #BB9AF7;">:&gt;45}</span><span style="color: #9ECE6A;">&#39;</span><span style="color: #9ABDF5;">)</span></span>
+<span class="giallo-l"><span style="color: #BB9AF7;">    for</span><span> elem</span><span style="color: #BB9AF7;"> in</span><span> listOfProcessNames</span><span style="color: #89DDFF;">:</span></span>
+<span class="giallo-l"><span style="color: #0DB9D7;">        print</span><span style="color: #9ABDF5;">(</span><span style="color: #BB9AF7;">f</span><span style="color: #9ECE6A;">&#39;</span><span style="color: #BB9AF7;">{</span><span style="color: #C0CAF5;">elem</span><span style="color: #9ABDF5;">[</span><span style="color: #89DDFF;">&quot;</span><span style="color: #9ECE6A;">pid</span><span style="color: #89DDFF;">&quot;</span><span style="color: #9ABDF5;">]</span><span style="color: #BB9AF7;">:&gt;6}{</span><span style="color: #C0CAF5;">elem</span><span style="color: #9ABDF5;">[</span><span style="color: #89DDFF;">&quot;</span><span style="color: #9ECE6A;">username</span><span style="color: #89DDFF;">&quot;</span><span style="color: #9ABDF5;">]</span><span style="color: #BB9AF7;">:&gt;10}{</span><span style="color: #C0CAF5;">elem</span><span style="color: #9ABDF5;">[</span><span style="color: #89DDFF;">&quot;</span><span style="color: #9ECE6A;">cpu_percent</span><span style="color: #89DDFF;">&quot;</span><span style="color: #9ABDF5;">]</span><span style="color: #BB9AF7;">:&gt;6}{</span><span style="color: #C0CAF5;">elem</span><span style="color: #9ABDF5;">[</span><span style="color: #89DDFF;">&quot;</span><span style="color: #9ECE6A;">memory_percent</span><span style="color: #89DDFF;">&quot;</span><span style="color: #9ABDF5;">]</span><span style="color: #BB9AF7;">:&gt;6.2f}{</span><span style="color: #C0CAF5;">elem</span><span style="color: #9ABDF5;">[</span><span style="color: #89DDFF;">&quot;</span><span style="color: #9ECE6A;">status</span><span style="color: #89DDFF;">&quot;</span><span style="color: #9ABDF5;">]</span><span style="color: #BB9AF7;">:&gt;15}{</span><span style="color: #C0CAF5;">elem</span><span style="color: #9ABDF5;">[</span><span style="color: #89DDFF;">&quot;</span><span style="color: #9ECE6A;">name</span><span style="color: #89DDFF;">&quot;</span><span style="color: #9ABDF5;">]</span><span style="color: #BB9AF7;">:&gt;45}</span><span style="color: #9ECE6A;">&#39;</span><span style="color: #9ABDF5;">)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #BB9AF7;">    if</span><span style="color: #89DDFF;"> (</span><span>guess</span><span style="color: #BB9AF7;"> ==</span><span style="color: #FF9E64;"> True</span><span style="color: #89DDFF;">):</span></span>
+<span class="giallo-l"><span>        setproctitle</span><span style="color: #89DDFF;">.</span><span style="color: #7AA2F7;">setproctitle</span><span style="color: #9ABDF5;">(</span><span style="color: #89DDFF;">&quot;</span><span style="color: #9ECE6A;">python3</span><span style="color: #89DDFF;">&quot;</span><span style="color: #9ABDF5;">)</span></span>
+<span class="giallo-l"><span>        setproctitle</span><span style="color: #89DDFF;">.</span><span style="color: #7AA2F7;">setthreadtitle</span><span style="color: #9ABDF5;">(</span><span style="color: #89DDFF;">&quot;</span><span style="color: #9ECE6A;">python3</span><span style="color: #89DDFF;">&quot;</span><span style="color: #9ABDF5;">)</span></span></code></pre>
+<p>When guess is true, it sets the proc title to be the uuid that was set in the main function. Knowing this, we can check the output and count how many uuids to see how many characters we got correct. I wrote a script to do this, and then send the guess to the remote server.</p>
+<pre class="giallo" style="color: #A9B1D6; background-color: #1A1B26;"><code data-lang="python"><span class="giallo-l"><span style="color: #7DCFFF;">from</span><span> pwn</span><span style="color: #7DCFFF;"> import</span><span style="color: #89DDFF;"> *</span><span> </span></span>
+<span class="giallo-l"><span>context</span><span style="color: #89DDFF;">.</span><span>log_level</span><span style="color: #89DDFF;"> = &#39;</span><span style="color: #9ECE6A;">error</span><span style="color: #89DDFF;">&#39;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #BB9AF7;">def</span><span style="color: #7AA2F7;"> send_guess</span><span style="color: #9ABDF5;">(</span><span style="color: #E0AF68;">flag</span><span style="color: #9ABDF5;">):</span></span>
+<span class="giallo-l"><span>    r</span><span style="color: #89DDFF;"> =</span><span style="color: #7AA2F7;"> remote</span><span style="color: #9ABDF5;">(</span><span style="color: #89DDFF;">&quot;</span><span style="color: #9ECE6A;">spaceheroes-cryptographic-space-rover.chals.io</span><span style="color: #89DDFF;">&quot;,</span><span style="color: #FF9E64;"> 443</span><span style="color: #89DDFF;">,</span><span style="color: #E0AF68;"> ssl</span><span style="color: #89DDFF;">=</span><span style="color: #FF9E64;">True</span><span style="color: #89DDFF;">,</span><span style="color: #E0AF68;"> sni</span><span style="color: #89DDFF;">=&quot;</span><span style="color: #9ECE6A;">spaceheroes-cryptographic-space-rover.chals.io</span><span style="color: #89DDFF;">&quot;</span><span style="color: #9ABDF5;">)</span></span>
+<span class="giallo-l"><span style="color: #BB9AF7;">    for</span><span> i</span><span style="color: #BB9AF7;"> in</span><span style="color: #0DB9D7;"> range</span><span style="color: #9ABDF5;">(</span><span style="color: #FF9E64;">0</span><span style="color: #89DDFF;">,</span><span style="color: #FF9E64;">26</span><span style="color: #9ABDF5;">)</span><span style="color: #89DDFF;">:</span></span>
+<span class="giallo-l"><span style="color: #BB9AF7;">        if</span><span> i</span><span style="color: #BB9AF7;"> ==</span><span style="color: #FF9E64;"> 8</span><span style="color: #89DDFF;">:</span></span>
+<span class="giallo-l"><span>            uuid</span><span style="color: #89DDFF;"> = (</span><span>r</span><span style="color: #89DDFF;">.</span><span style="color: #7AA2F7;">recvline</span><span style="color: #9ABDF5;">()</span><span style="color: #89DDFF;">).</span><span style="color: #7AA2F7;">decode</span><span style="color: #9ABDF5;">()</span><span style="color: #89DDFF;">.</span><span style="color: #7AA2F7;">strip</span><span style="color: #9ABDF5;">()</span><span style="color: #89DDFF;">.</span><span style="color: #7AA2F7;">replace</span><span style="color: #9ABDF5;">(</span><span style="color: #89DDFF;">&quot; &quot;, &quot;&quot;</span><span style="color: #9ABDF5;">)</span><span style="color: #89DDFF;">.</span><span style="color: #7AA2F7;">replace</span><span style="color: #9ABDF5;">(</span><span style="color: #89DDFF;">&quot;</span><span style="color: #9ECE6A;">|</span><span style="color: #89DDFF;">&quot;,&quot;&quot;</span><span style="color: #9ABDF5;">)</span></span>
+<span class="giallo-l"><span style="color: #BB9AF7;">        else</span><span style="color: #89DDFF;">:</span></span>
+<span class="giallo-l"><span>            r</span><span style="color: #89DDFF;">.</span><span style="color: #7AA2F7;">recvline</span><span style="color: #9ABDF5;">()</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>    r</span><span style="color: #89DDFF;">.</span><span style="color: #7AA2F7;">sendline</span><span style="color: #9ABDF5;">(</span><span style="color: #C0CAF5;">flag</span><span style="color: #89DDFF;">.</span><span style="color: #7AA2F7;">encode</span><span style="color: #9ABDF5;">())</span></span>
+<span class="giallo-l"><span>    </span></span>
+<span class="giallo-l"><span>    count</span><span style="color: #89DDFF;"> =</span><span style="color: #FF9E64;"> 0</span></span>
+<span class="giallo-l"><span style="color: #BB9AF7;">    while</span><span style="color: #FF9E64;"> True</span><span style="color: #89DDFF;">:</span></span>
+<span class="giallo-l"><span style="color: #BB9AF7;">        try</span><span style="color: #89DDFF;">:</span></span>
+<span class="giallo-l"><span>            line</span><span style="color: #89DDFF;"> =</span><span> r</span><span style="color: #89DDFF;">.</span><span style="color: #7AA2F7;">recvline</span><span style="color: #9ABDF5;">()</span><span style="color: #89DDFF;">.</span><span style="color: #7AA2F7;">decode</span><span style="color: #9ABDF5;">()</span></span>
+<span class="giallo-l"><span style="color: #BB9AF7;">            if</span><span> uuid</span><span style="color: #BB9AF7;"> in</span><span> line</span><span style="color: #89DDFF;">:</span></span>
+<span class="giallo-l"><span>                count</span><span style="color: #89DDFF;">+=</span><span style="color: #FF9E64;">1</span></span>
+<span class="giallo-l"><span style="color: #BB9AF7;">        except</span><span style="color: #89DDFF;">:</span></span>
+<span class="giallo-l"><span style="color: #BB9AF7;">            break</span></span>
+<span class="giallo-l"><span style="color: #0DB9D7;">    print</span><span style="color: #9ABDF5;">(</span><span style="color: #BB9AF7;">f</span><span style="color: #9ECE6A;">&quot;</span><span style="color: #BB9AF7;">{</span><span style="color: #C0CAF5;">count</span><span style="color: #BB9AF7;">}</span><span style="color: #9ECE6A;"> - </span><span style="color: #BB9AF7;">{</span><span style="color: #C0CAF5;">flag</span><span style="color: #BB9AF7;">}</span><span style="color: #9ECE6A;">&quot;</span><span style="color: #9ABDF5;">)</span></span>
+<span class="giallo-l"><span style="color: #BB9AF7;">    if</span><span> count</span><span style="color: #BB9AF7;"> &gt;=</span><span style="color: #0DB9D7;"> len</span><span style="color: #9ABDF5;">(</span><span style="color: #C0CAF5;">flag</span><span style="color: #9ABDF5;">)</span><span style="color: #89DDFF;">:</span></span>
+<span class="giallo-l"><span style="color: #BB9AF7;">        return</span><span> flag</span></span>
+<span class="giallo-l"><span>    r</span><span style="color: #89DDFF;">.</span><span style="color: #7AA2F7;">close</span><span style="color: #9ABDF5;">()</span></span>
+<span class="giallo-l"><span style="color: #BB9AF7;">    return</span><span style="color: #FF9E64;"> None</span><span>    </span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>initflag</span><span style="color: #89DDFF;"> = &quot;</span><span style="color: #9ECE6A;">shCTF{</span><span style="color: #89DDFF;">&quot;</span></span>
+<span class="giallo-l"><span>asciiString</span><span style="color: #89DDFF;"> = &#39;</span><span style="color: #9ECE6A;"> !&quot;#$%&amp;</span><span style="color: #89DDFF;">\&#39;</span><span style="color: #9ECE6A;">()*+,-./0123456789:;&lt;=&gt;?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[</span><span style="color: #89DDFF;">\\</span><span style="color: #9ECE6A;">]^_`abcdefghijklmnopqrstuvwxyz{|}~</span><span style="color: #89DDFF;">&#39;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #BB9AF7;">while</span><span style="color: #FF9E64;"> True</span><span style="color: #89DDFF;">:</span></span>
+<span class="giallo-l"><span style="color: #BB9AF7;">    for</span><span> char</span><span style="color: #BB9AF7;"> in</span><span> asciiString</span><span style="color: #89DDFF;">:</span></span>
+<span class="giallo-l"><span>        flag</span><span style="color: #89DDFF;"> =</span><span> initflag</span><span style="color: #89DDFF;">+</span><span>char</span></span>
+<span class="giallo-l"><span>        flag</span><span style="color: #89DDFF;"> =</span><span style="color: #7AA2F7;"> send_guess</span><span style="color: #9ABDF5;">(</span><span style="color: #C0CAF5;">flag</span><span style="color: #9ABDF5;">)</span></span>
+<span class="giallo-l"><span style="color: #BB9AF7;">        if</span><span> flag</span><span style="color: #BB9AF7;"> is not</span><span style="color: #FF9E64;"> None</span><span style="color: #89DDFF;">:</span></span>
+<span class="giallo-l"><span>            initflag</span><span style="color: #89DDFF;"> =</span><span> flag</span></span>
+<span class="giallo-l"><span style="color: #BB9AF7;">            continue</span></span></code></pre>
+<p>This script loops through all ascii characters, and then uses those to progressively guess the flag. It checks to see if the current guess is right by checking the number of uuids printed out. To make it easier, I silenced all output from the actual program and just let it guess.</p>
+<p><img src="https://vaughn.sh/security/space-heroes/cryptographic-space-rover/brute_force_nasa.png" alt="" /></p>
+<p><strong>Flag:</strong> <code>shCTF{MET30RS_4R3NT_aS_b4D_4S_sL0W_cpu}</code></p>
+
+
+            </main>
+            <footer>
+                
+<p class="taxonomies">
+
+</p>
+
+                
+            </footer>
+        </div>
+        <script src="https://unpkg.com/cursor-effects@latest/dist/browser.js"></script>
+        <script>
+          window.addEventListener("load", (event) => { new cursoreffects.ghostCursor(); });
+        </script>
+     </body>
+ </html>
