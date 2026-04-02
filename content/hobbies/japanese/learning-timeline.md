@@ -147,7 +147,7 @@ I got hip surgery! It's been pretty sweet thus far, honestly. Much less pain ove
 
 Once I was feeling well enough I decided to put far more work into my Kanji study, as well as grammar review. For Kanji I have been utilizing the Kodansha Kanji Learner's course and I am currently around 400 Kanji deep into it. I combine this with a KKLC deck on Anki in order to practice both recognition and recall, and I write every Kanji 10 or so times (with the proper stroke order, of course) in a notebook to really drill it in. In general this has been an incredible method and I have been having a very easy time shoving these characters into my mind.
 
-For grammar, I'm working on reviewing all of the stuff I have done before, and I am going through all of the Anki lessons to create my own sets of example sentences to make sure I have 'full' understanding of each grammar concept. You can check them out at [example-sentences](./example-sentences), and they will be updated over time as I do my review.
+For grammar, I'm working on reviewing all of the stuff I have done before, and I am going through all of the Anki lessons to create my own sets of example sentences to make sure I have 'full' understanding of each grammar concept. You can check them out at [example-sentences](../example-sentences), and they will be updated over time as I do my review.
 
 For reading I have gotten so insanely bored with the structured graded readers. It's really a pain in the ass to get through these with the incredibly boring stories. Sorry!! Instead, I've downloaded コンビニ人間 and I'm going to try getting a good bit through this as a goal by the end of the month. 
 
