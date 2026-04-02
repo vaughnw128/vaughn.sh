@@ -4,7 +4,7 @@ title = "Seared Cucumber"
 
 The name of this recipe makes no sense as it is not seared. It is cucumbers, though. This was originally tried at a restaurant called Birds of a Feather in Brooklyn. I liked it a lot, and wanted to create a similar version but with less effort to have an easy side to go with more heavy dishes.
 
-![](karaage2.jpg)
+![](cucumber.jpg)
 
 ## Ingredients
 - 1 English cucumber
