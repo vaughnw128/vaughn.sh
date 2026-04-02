@@ -6,6 +6,7 @@ I like doing a bunch of different things. Here I'll document some of the project
 
 ## japanese
 - [learning timeline](./japanese/learning-timeline)
+- [example sentences](./japanese/example-sentences)
 
 ## brewing
 - [metheglin](./brewing/metheglin)
