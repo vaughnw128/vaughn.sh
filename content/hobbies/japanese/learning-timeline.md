@@ -79,13 +79,13 @@ of entry level manga to read, so that may also be a good starting off point.
 ### 8/31/2025 ~ [Unsurety and Triumph]
 
 I think to myself pretty often thoughts of unsurety in my mission to learn Japanese. "Am I working hard enough? Is it possible for me to achieve my goal? Will I just give up?" 
-These kinds of thoughts makes it quite hard to stay motivated. It's not constant, and rather comes and goes; I'm consistently motivated and unconsistently unmotivated, I guess. 
+These kinds of thoughts makes it quite hard to stay motivated. It's not constant, and rather comes and goes; I'm consistently motivated and inconsistently unmotivated, I guess. 
 The line to teeter between burnout and passion is one that is hard walked, and I can never know my proximity until the line has been crossed. 
 I feel as though I'm not only learning a language, but also learning many things about myself through this process. I set out with the question of "Can I learn this thing 
 which is incredibly difficult," and I really and truly want to prove to myself that I can. I'm particularly worried I'm not doing a good enough job with reading and sentence mining,
 and that I'm taking lazy approaches to learning. It's hard to be confident about my skills to take on harder material when much of it is not comprehensible.
 
-Okay okay, stupid self-confidence related rambling out of the way. Somehwere in the past month, I surpassed 1000 words of my vocabulary list Kaishi 1.5k. 
+Okay okay, stupid self-confidence related rambling out of the way. Somewhere in the past month, I surpassed 1000 words of my vocabulary list Kaishi 1.5k. 
 At this point I'm at 1239, and on track to complete the list by the end of September. Tomorrow is also my 100th day of the list at least, 
 and that means I've passed 100 days of Japanese studying! It feels pretty weird to know how far I've come already. That distance is nothing compared to what's ahead, though. 
 I think and believe the groundwork and study rhythm I've set for myself has been pretty pivotal to my success thus far, and makes some of the consistent daily effort much easier.
@@ -102,7 +102,7 @@ I've been using these stories to add to my sentence mining deck, but my study of
 
 This past month has been the strongest for my learning journey, but the most difficult both mentally and emotionally. I will not give up. 自分を裏切りたくない。
 
-### 1/6/2025 ~ [お正月のあとで勉強がどんどん続けりたい！]
+### 1/6/2025 ~ [お正月のあとで勉強がどんどん続けたい！]
 
 あけましておめでとうございます！ Happy new years! ひさしぶりですね。 It's been a while, eh?
 
